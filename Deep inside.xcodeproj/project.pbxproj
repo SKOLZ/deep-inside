@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF26E58F1CEA8190009EE213 /* smoke7 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E5881CEA8190009EE213 /* smoke7 */; };
+		DF26E5901CEA8190009EE213 /* smoke6 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E5891CEA8190009EE213 /* smoke6 */; };
+		DF26E5911CEA8190009EE213 /* smoke5 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E58A1CEA8190009EE213 /* smoke5 */; };
+		DF26E5921CEA8190009EE213 /* smoke4 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E58B1CEA8190009EE213 /* smoke4 */; };
+		DF26E5931CEA8190009EE213 /* smoke3 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E58C1CEA8190009EE213 /* smoke3 */; };
+		DF26E5941CEA8190009EE213 /* smoke2 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E58D1CEA8190009EE213 /* smoke2 */; };
+		DF26E5951CEA8190009EE213 /* smoke1 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E58E1CEA8190009EE213 /* smoke1 */; };
+		DF26E5991CEA925A009EE213 /* smoke8 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E5981CEA925A009EE213 /* smoke8 */; };
+		DF26E59F1CEAA4C4009EE213 /* player_jump1 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E59A1CEAA4C4009EE213 /* player_jump1 */; };
+		DF26E5A01CEAA4C4009EE213 /* player_jump2 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E59B1CEAA4C4009EE213 /* player_jump2 */; };
+		DF26E5A11CEAA4C4009EE213 /* player_jump3 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E59C1CEAA4C4009EE213 /* player_jump3 */; };
+		DF26E5A21CEAA4C4009EE213 /* player_jump4 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E59D1CEAA4C4009EE213 /* player_jump4 */; };
+		DF26E5A31CEAA4C4009EE213 /* player_jump5 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E59E1CEAA4C4009EE213 /* player_jump5 */; };
 		DF6705EC1CE3BEA6003AF6F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6705EB1CE3BEA6003AF6F2 /* main.m */; };
 		DF6705EF1CE3BEA6003AF6F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6705EE1CE3BEA6003AF6F2 /* AppDelegate.m */; };
 		DF6705F21CE3BEA6003AF6F2 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6705F11CE3BEA6003AF6F2 /* GameScene.m */; };
@@ -15,9 +28,29 @@
 		DF6705FA1CE3BEA6003AF6F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF6705F81CE3BEA6003AF6F2 /* Main.storyboard */; };
 		DF6705FC1CE3BEA6003AF6F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF6705FB1CE3BEA6003AF6F2 /* Assets.xcassets */; };
 		DF6705FF1CE3BEA6003AF6F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF6705FD1CE3BEA6003AF6F2 /* LaunchScreen.storyboard */; };
+		DF6857F91CE3DB05003E13CD /* player_walk1 in Resources */ = {isa = PBXBuildFile; fileRef = DF6857F51CE3DB05003E13CD /* player_walk1 */; };
+		DF6857FA1CE3DB05003E13CD /* player_walk2 in Resources */ = {isa = PBXBuildFile; fileRef = DF6857F61CE3DB05003E13CD /* player_walk2 */; };
+		DF6857FB1CE3DB05003E13CD /* player_walk3 in Resources */ = {isa = PBXBuildFile; fileRef = DF6857F71CE3DB05003E13CD /* player_walk3 */; };
+		DF6857FC1CE3DB05003E13CD /* player_walk4 in Resources */ = {isa = PBXBuildFile; fileRef = DF6857F81CE3DB05003E13CD /* player_walk4 */; };
+		DFCC7E7D1CE53D500053998C /* game_ground in Resources */ = {isa = PBXBuildFile; fileRef = DFCC7E7C1CE53D500053998C /* game_ground */; };
+		DFCC7E851CE544830053998C /* game_background in Resources */ = {isa = PBXBuildFile; fileRef = DFCC7E841CE544830053998C /* game_background */; };
+		DFDE1AA61CEE63E800218F32 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDE1AA51CEE63E800218F32 /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF26E5881CEA8190009EE213 /* smoke7 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke7; sourceTree = "<group>"; };
+		DF26E5891CEA8190009EE213 /* smoke6 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke6; sourceTree = "<group>"; };
+		DF26E58A1CEA8190009EE213 /* smoke5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke5; sourceTree = "<group>"; };
+		DF26E58B1CEA8190009EE213 /* smoke4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke4; sourceTree = "<group>"; };
+		DF26E58C1CEA8190009EE213 /* smoke3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke3; sourceTree = "<group>"; };
+		DF26E58D1CEA8190009EE213 /* smoke2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke2; sourceTree = "<group>"; };
+		DF26E58E1CEA8190009EE213 /* smoke1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke1; sourceTree = "<group>"; };
+		DF26E5981CEA925A009EE213 /* smoke8 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke8; sourceTree = "<group>"; };
+		DF26E59A1CEAA4C4009EE213 /* player_jump1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_jump1; sourceTree = "<group>"; };
+		DF26E59B1CEAA4C4009EE213 /* player_jump2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_jump2; sourceTree = "<group>"; };
+		DF26E59C1CEAA4C4009EE213 /* player_jump3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_jump3; sourceTree = "<group>"; };
+		DF26E59D1CEAA4C4009EE213 /* player_jump4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_jump4; sourceTree = "<group>"; };
+		DF26E59E1CEAA4C4009EE213 /* player_jump5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_jump5; sourceTree = "<group>"; };
 		DF6705E71CE3BEA6003AF6F2 /* Deep inside.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Deep inside.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF6705EB1CE3BEA6003AF6F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DF6705ED1CE3BEA6003AF6F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -31,6 +64,14 @@
 		DF6705FB1CE3BEA6003AF6F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF6705FE1CE3BEA6003AF6F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF6706001CE3BEA6003AF6F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF6857F51CE3DB05003E13CD /* player_walk1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_walk1; sourceTree = "<group>"; };
+		DF6857F61CE3DB05003E13CD /* player_walk2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_walk2; sourceTree = "<group>"; };
+		DF6857F71CE3DB05003E13CD /* player_walk3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_walk3; sourceTree = "<group>"; };
+		DF6857F81CE3DB05003E13CD /* player_walk4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_walk4; sourceTree = "<group>"; };
+		DFCC7E7C1CE53D500053998C /* game_ground */ = {isa = PBXFileReference; lastKnownFileType = file; path = game_ground; sourceTree = "<group>"; };
+		DFCC7E841CE544830053998C /* game_background */ = {isa = PBXFileReference; lastKnownFileType = file; path = game_background; sourceTree = "<group>"; };
+		DFDE1AA41CEE63E800218F32 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		DFDE1AA51CEE63E800218F32 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +104,29 @@
 		DF6705E91CE3BEA6003AF6F2 /* Deep inside */ = {
 			isa = PBXGroup;
 			children = (
+				DF6857F51CE3DB05003E13CD /* player_walk1 */,
+				DF6857F61CE3DB05003E13CD /* player_walk2 */,
+				DF6857F71CE3DB05003E13CD /* player_walk3 */,
+				DF6857F81CE3DB05003E13CD /* player_walk4 */,
+				DF26E59A1CEAA4C4009EE213 /* player_jump1 */,
+				DF26E59B1CEAA4C4009EE213 /* player_jump2 */,
+				DF26E59C1CEAA4C4009EE213 /* player_jump3 */,
+				DF26E59D1CEAA4C4009EE213 /* player_jump4 */,
+				DF26E59E1CEAA4C4009EE213 /* player_jump5 */,
+				DF26E5981CEA925A009EE213 /* smoke8 */,
+				DF26E5881CEA8190009EE213 /* smoke7 */,
+				DF26E5891CEA8190009EE213 /* smoke6 */,
+				DF26E58A1CEA8190009EE213 /* smoke5 */,
+				DF26E58B1CEA8190009EE213 /* smoke4 */,
+				DF26E58C1CEA8190009EE213 /* smoke3 */,
+				DF26E58D1CEA8190009EE213 /* smoke2 */,
+				DF26E58E1CEA8190009EE213 /* smoke1 */,
 				DF6705ED1CE3BEA6003AF6F2 /* AppDelegate.h */,
 				DF6705EE1CE3BEA6003AF6F2 /* AppDelegate.m */,
 				DF6705F01CE3BEA6003AF6F2 /* GameScene.h */,
 				DF6705F11CE3BEA6003AF6F2 /* GameScene.m */,
+				DFCC7E841CE544830053998C /* game_background */,
+				DFCC7E7C1CE53D500053998C /* game_ground */,
 				DF6705F31CE3BEA6003AF6F2 /* GameScene.sks */,
 				DF6705F51CE3BEA6003AF6F2 /* GameViewController.h */,
 				DF6705F61CE3BEA6003AF6F2 /* GameViewController.m */,
@@ -75,6 +135,8 @@
 				DF6705FD1CE3BEA6003AF6F2 /* LaunchScreen.storyboard */,
 				DF6706001CE3BEA6003AF6F2 /* Info.plist */,
 				DF6705EA1CE3BEA6003AF6F2 /* Supporting Files */,
+				DFDE1AA41CEE63E800218F32 /* Player.h */,
+				DFDE1AA51CEE63E800218F32 /* Player.m */,
 			);
 			path = "Deep inside";
 			sourceTree = "<group>";
@@ -144,10 +206,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF26E5931CEA8190009EE213 /* smoke3 in Resources */,
+				DF26E5911CEA8190009EE213 /* smoke5 in Resources */,
 				DF6705F41CE3BEA6003AF6F2 /* GameScene.sks in Resources */,
+				DF26E59F1CEAA4C4009EE213 /* player_jump1 in Resources */,
+				DFCC7E7D1CE53D500053998C /* game_ground in Resources */,
+				DF6857FC1CE3DB05003E13CD /* player_walk4 in Resources */,
+				DF26E5A01CEAA4C4009EE213 /* player_jump2 in Resources */,
+				DF26E5901CEA8190009EE213 /* smoke6 in Resources */,
+				DF6857FA1CE3DB05003E13CD /* player_walk2 in Resources */,
+				DF26E5941CEA8190009EE213 /* smoke2 in Resources */,
+				DF26E5A11CEAA4C4009EE213 /* player_jump3 in Resources */,
+				DF26E58F1CEA8190009EE213 /* smoke7 in Resources */,
 				DF6705FF1CE3BEA6003AF6F2 /* LaunchScreen.storyboard in Resources */,
+				DF6857F91CE3DB05003E13CD /* player_walk1 in Resources */,
 				DF6705FC1CE3BEA6003AF6F2 /* Assets.xcassets in Resources */,
 				DF6705FA1CE3BEA6003AF6F2 /* Main.storyboard in Resources */,
+				DF26E5A21CEAA4C4009EE213 /* player_jump4 in Resources */,
+				DF26E5991CEA925A009EE213 /* smoke8 in Resources */,
+				DF26E5951CEA8190009EE213 /* smoke1 in Resources */,
+				DFCC7E851CE544830053998C /* game_background in Resources */,
+				DF26E5A31CEAA4C4009EE213 /* player_jump5 in Resources */,
+				DF6857FB1CE3DB05003E13CD /* player_walk3 in Resources */,
+				DF26E5921CEA8190009EE213 /* smoke4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +243,7 @@
 				DF6705EF1CE3BEA6003AF6F2 /* AppDelegate.m in Sources */,
 				DF6705F21CE3BEA6003AF6F2 /* GameScene.m in Sources */,
 				DF6705EC1CE3BEA6003AF6F2 /* main.m in Sources */,
+				DFDE1AA61CEE63E800218F32 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +394,7 @@
 				DF6706051CE3BEA6003AF6F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
