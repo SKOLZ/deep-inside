@@ -72,6 +72,7 @@
 		DFCC7E841CE544830053998C /* game_background */ = {isa = PBXFileReference; lastKnownFileType = file; path = game_background; sourceTree = "<group>"; };
 		DFDE1AA41CEE63E800218F32 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		DFDE1AA51CEE63E800218F32 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		DFDE1AA81CEE668B00218F32 /* textures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = textures.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +105,37 @@
 		DF6705E91CE3BEA6003AF6F2 /* Deep inside */ = {
 			isa = PBXGroup;
 			children = (
+				DFDE1AA71CEE657800218F32 /* assets */,
+				DF6705ED1CE3BEA6003AF6F2 /* AppDelegate.h */,
+				DF6705EE1CE3BEA6003AF6F2 /* AppDelegate.m */,
+				DF6705F01CE3BEA6003AF6F2 /* GameScene.h */,
+				DF6705F11CE3BEA6003AF6F2 /* GameScene.m */,
+				DF6705F31CE3BEA6003AF6F2 /* GameScene.sks */,
+				DF6705F51CE3BEA6003AF6F2 /* GameViewController.h */,
+				DF6705F61CE3BEA6003AF6F2 /* GameViewController.m */,
+				DF6705F81CE3BEA6003AF6F2 /* Main.storyboard */,
+				DF6705FB1CE3BEA6003AF6F2 /* Assets.xcassets */,
+				DF6705FD1CE3BEA6003AF6F2 /* LaunchScreen.storyboard */,
+				DF6706001CE3BEA6003AF6F2 /* Info.plist */,
+				DF6705EA1CE3BEA6003AF6F2 /* Supporting Files */,
+				DFDE1AA41CEE63E800218F32 /* Player.h */,
+				DFDE1AA51CEE63E800218F32 /* Player.m */,
+				DFDE1AA81CEE668B00218F32 /* textures.h */,
+			);
+			path = "Deep inside";
+			sourceTree = "<group>";
+		};
+		DF6705EA1CE3BEA6003AF6F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF6705EB1CE3BEA6003AF6F2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DFDE1AA71CEE657800218F32 /* assets */ = {
+			isa = PBXGroup;
+			children = (
 				DF6857F51CE3DB05003E13CD /* player_walk1 */,
 				DF6857F61CE3DB05003E13CD /* player_walk2 */,
 				DF6857F71CE3DB05003E13CD /* player_walk3 */,
@@ -121,32 +153,10 @@
 				DF26E58C1CEA8190009EE213 /* smoke3 */,
 				DF26E58D1CEA8190009EE213 /* smoke2 */,
 				DF26E58E1CEA8190009EE213 /* smoke1 */,
-				DF6705ED1CE3BEA6003AF6F2 /* AppDelegate.h */,
-				DF6705EE1CE3BEA6003AF6F2 /* AppDelegate.m */,
-				DF6705F01CE3BEA6003AF6F2 /* GameScene.h */,
-				DF6705F11CE3BEA6003AF6F2 /* GameScene.m */,
 				DFCC7E841CE544830053998C /* game_background */,
 				DFCC7E7C1CE53D500053998C /* game_ground */,
-				DF6705F31CE3BEA6003AF6F2 /* GameScene.sks */,
-				DF6705F51CE3BEA6003AF6F2 /* GameViewController.h */,
-				DF6705F61CE3BEA6003AF6F2 /* GameViewController.m */,
-				DF6705F81CE3BEA6003AF6F2 /* Main.storyboard */,
-				DF6705FB1CE3BEA6003AF6F2 /* Assets.xcassets */,
-				DF6705FD1CE3BEA6003AF6F2 /* LaunchScreen.storyboard */,
-				DF6706001CE3BEA6003AF6F2 /* Info.plist */,
-				DF6705EA1CE3BEA6003AF6F2 /* Supporting Files */,
-				DFDE1AA41CEE63E800218F32 /* Player.h */,
-				DFDE1AA51CEE63E800218F32 /* Player.m */,
 			);
-			path = "Deep inside";
-			sourceTree = "<group>";
-		};
-		DF6705EA1CE3BEA6003AF6F2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DF6705EB1CE3BEA6003AF6F2 /* main.m */,
-			);
-			name = "Supporting Files";
+			name = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
