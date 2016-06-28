@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
+#import "MenuScene.h"
 
 @implementation GameViewController
 
@@ -15,19 +16,23 @@
 {
     [super viewDidLoad];
 
-    // Configure the view.
+//    // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    /* Sprite Kit applies additional optimizations to improve rendering performance */
-    skView.ignoresSiblingOrder = YES;
-    
-    // Create and configure the scene.
-    GameScene *scene = [GameScene nodeWithFileNamed:@"GameScene"];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    // Present the scene.
-    [skView presentScene:scene];
+//    skView.showsFPS = YES;
+//    skView.showsNodeCount = YES;
+//    /* Sprite Kit applies additional optimizations to improve rendering performance */
+//    skView.ignoresSiblingOrder = YES;
+//    
+//    // Create and configure the scene.
+//    GameScene *scene = [GameScene nodeWithFileNamed:@"GameScene"];
+//    scene.scaleMode = SKSceneScaleModeAspectFill;
+//    
+//    // Present the scene.
+//    [skView presentScene:scene];
+    MenuScene *menuScene = [MenuScene nodeWithFileNamed:@"MenuScene"];
+    menuScene.scaleMode = SKSceneScaleModeAspectFill;
+    [skView presentScene:menuScene];
+
 }
 
 - (BOOL)shouldAutorotate

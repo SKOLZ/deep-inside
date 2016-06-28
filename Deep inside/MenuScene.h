@@ -8,8 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface GameScene : SKScene
-
--(void)killFloatGround:(SKSpriteNode*) floatingGround;
+@interface MenuScene : SKScene
 
 @end

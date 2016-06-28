@@ -20,7 +20,6 @@ typedef NS_ENUM(NSInteger, PlayerState) {
 -(void)jump;
 -(void)run;
 -(void)appear;
-//-(void)showPlayerAfterSmoke;
 
 @property (nonatomic) PlayerState state;
 
