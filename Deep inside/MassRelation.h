@@ -10,5 +10,6 @@
 #define MassRelation_h
 
 #define PLAYER_MASS 1.3
+#define MONSTER_MASS 2
 
 #endif /* MassRelation_h */

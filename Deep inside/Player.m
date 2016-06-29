@@ -48,7 +48,11 @@
     self.state = PLAYER_DISAPPEARED;
     [self setTexture:PLAYER_SMOKE1];
     SKAction* smoke = [SKAction repeatAction:[SKAction animateWithTextures:@[PLAYER_SMOKE1, PLAYER_SMOKE2, PLAYER_SMOKE3, PLAYER_SMOKE4, PLAYER_SMOKE5, PLAYER_SMOKE6, PLAYER_SMOKE7, PLAYER_SMOKE8] timePerFrame: 0.0625] count: 1];
+    self.physicsBody.dynamic = NO;
+    self.physicsBody.collisionBitMask = floorCategory; // only collide with floor.
     [self runAction:smoke completion:^{
+        self.physicsBody.dynamic = YES;
+        self.physicsBody.collisionBitMask = 0xFFFFFFFF; // return to collide with everyone
         [self setTexture: NULL];
         [self removeAllActions];
         [self performSelector:@selector(appear) withObject:nil afterDelay: 1.0];
