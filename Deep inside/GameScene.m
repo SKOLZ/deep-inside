@@ -31,7 +31,7 @@
     int hearts;
     NSInteger currentSoundsIndex;
     AVPlayer *mediaPlayer;
-    NSArray<AVPlayerItem *> *soundList;
+    NSMutableArray<AVPlayerItem *> *soundList;
 }
 @end
 
@@ -39,11 +39,13 @@
 
 - (void)playerItemDidReachEnd:(NSNotification *)notification {
     currentSoundsIndex++;
+    if (currentSoundsIndex == MUSIC_TRACK_SIZE) {
+        currentSoundsIndex = 0;
+    }
     [self playNextAudio];
 }
 
 - (void)playNextAudio {
-    NSLog(@"audioooo");
     [mediaPlayer replaceCurrentItemWithPlayerItem:[soundList objectAtIndex:currentSoundsIndex]];
     [mediaPlayer play];
     mediaPlayer.actionAtItemEnd = AVPlayerActionAtItemEndNone;
@@ -55,7 +57,16 @@
 
 -(void)didMoveToView:(SKView *)view {
     currentSoundsIndex = 0;
-    soundList = @[TRACK1, TRACK2, TRACK3, TRACK4, TRACK5];
+    soundList = [NSMutableArray arrayWithObjects: TRACK1, TRACK2, TRACK3, TRACK4, TRACK5, nil];
+    
+    NSUInteger count = [soundList count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        // Select a random element between i and end of array to swap with.
+        unsigned long nElements = count - i;
+        unsigned long n = (arc4random() % nElements) + i;
+        [soundList exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+    
     mediaPlayer = [[AVPlayer alloc] init];
     [self playNextAudio];
     

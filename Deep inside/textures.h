@@ -53,10 +53,27 @@
 
 // MENU
 
-#define MENU_BACKGROUND_TEXTURE [SKTexture textureWithImageNamed:@"menu_background.jpg"]
+//#define MENU_BACKGROUND_TEXTURE [SKTexture textureWithImageNamed:@"menu_background.jpg"]
 #define LOGO [SKTexture textureWithImageNamed:@"deep_inside_logo"]
 #define PLAY [SKTexture textureWithImageNamed:@"play_button"]
 #define QUIT [SKTexture textureWithImageNamed:@"quit_button"]
+
+#define MENU_BACKGROUND_TEXTURE1 [SKTexture textureWithImageNamed:@"menu_bg1"]
+#define MENU_BACKGROUND_TEXTURE2 [SKTexture textureWithImageNamed:@"menu_bg2"]
+#define MENU_BACKGROUND_TEXTURE3 [SKTexture textureWithImageNamed:@"menu_bg3"]
+#define MENU_BACKGROUND_TEXTURE4 [SKTexture textureWithImageNamed:@"menu_bg4"]
+#define MENU_BACKGROUND_TEXTURE5 [SKTexture textureWithImageNamed:@"menu_bg5"]
+#define MENU_BACKGROUND_TEXTURE6 [SKTexture textureWithImageNamed:@"menu_bg6"]
+#define MENU_BACKGROUND_TEXTURE7 [SKTexture textureWithImageNamed:@"menu_bg7"]
+#define MENU_BACKGROUND_TEXTURE8 [SKTexture textureWithImageNamed:@"menu_bg8"]
+#define MENU_BACKGROUND_TEXTURE9 [SKTexture textureWithImageNamed:@"menu_bg9"]
+#define MENU_BACKGROUND_TEXTURE10 [SKTexture textureWithImageNamed:@"menu_bg10"]
+#define MENU_BACKGROUND_TEXTURE11 [SKTexture textureWithImageNamed:@"menu_bg11"]
+#define MENU_BACKGROUND_TEXTURE12 [SKTexture textureWithImageNamed:@"menu_bg12"]
+#define MENU_BACKGROUND_TEXTURE13 [SKTexture textureWithImageNamed:@"menu_bg13"]
+#define MENU_BACKGROUND_TEXTURE14 [SKTexture textureWithImageNamed:@"menu_bg14"]
+#define MENU_BACKGROUND_TEXTURE15 [SKTexture textureWithImageNamed:@"menu_bg15"]
+#define MENU_BACKGROUND_TEXTURE16 [SKTexture textureWithImageNamed:@"menu_bg16"]
 
 
 #endif /* textures_h */
