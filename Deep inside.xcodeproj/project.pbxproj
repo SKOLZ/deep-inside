@@ -80,6 +80,12 @@
 		DFDFFE951D239AC5002E5598 /* zombie3 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE901D239AC5002E5598 /* zombie3 */; };
 		DFDFFE961D239AC5002E5598 /* zombie2 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE911D239AC5002E5598 /* zombie2 */; };
 		DFDFFE971D239AC5002E5598 /* zombie1 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE921D239AC5002E5598 /* zombie1 */; };
+		DFDFFE9E1D23A9DD002E5598 /* player_dying6 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE981D23A9DD002E5598 /* player_dying6 */; };
+		DFDFFE9F1D23A9DD002E5598 /* player_dying5 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE991D23A9DD002E5598 /* player_dying5 */; };
+		DFDFFEA01D23A9DD002E5598 /* player_dying4 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE9A1D23A9DD002E5598 /* player_dying4 */; };
+		DFDFFEA11D23A9DD002E5598 /* player_dying3 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE9B1D23A9DD002E5598 /* player_dying3 */; };
+		DFDFFEA21D23A9DD002E5598 /* player_dying2 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE9C1D23A9DD002E5598 /* player_dying2 */; };
+		DFDFFEA31D23A9DD002E5598 /* player_dying1 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE9D1D23A9DD002E5598 /* player_dying1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -168,6 +174,12 @@
 		DFDFFE901D239AC5002E5598 /* zombie3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie3; sourceTree = "<group>"; };
 		DFDFFE911D239AC5002E5598 /* zombie2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie2; sourceTree = "<group>"; };
 		DFDFFE921D239AC5002E5598 /* zombie1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie1; sourceTree = "<group>"; };
+		DFDFFE981D23A9DD002E5598 /* player_dying6 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_dying6; sourceTree = "<group>"; };
+		DFDFFE991D23A9DD002E5598 /* player_dying5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_dying5; sourceTree = "<group>"; };
+		DFDFFE9A1D23A9DD002E5598 /* player_dying4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_dying4; sourceTree = "<group>"; };
+		DFDFFE9B1D23A9DD002E5598 /* player_dying3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_dying3; sourceTree = "<group>"; };
+		DFDFFE9C1D23A9DD002E5598 /* player_dying2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_dying2; sourceTree = "<group>"; };
+		DFDFFE9D1D23A9DD002E5598 /* player_dying1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_dying1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +276,12 @@
 				DFDFFE791D238CF6002E5598 /* menu_bg1 */,
 				DFDFFE081D220569002E5598 /* deep_inside_logo */,
 				DF76784B1D1A2762001315E1 /* grass_platform.png */,
+				DFDFFE981D23A9DD002E5598 /* player_dying6 */,
+				DFDFFE991D23A9DD002E5598 /* player_dying5 */,
+				DFDFFE9A1D23A9DD002E5598 /* player_dying4 */,
+				DFDFFE9B1D23A9DD002E5598 /* player_dying3 */,
+				DFDFFE9C1D23A9DD002E5598 /* player_dying2 */,
+				DFDFFE9D1D23A9DD002E5598 /* player_dying1 */,
 				DFDFFE8E1D239AC5002E5598 /* zombie5 */,
 				DFDFFE8F1D239AC5002E5598 /* zombie4 */,
 				DFDFFE901D239AC5002E5598 /* zombie3 */,
@@ -373,6 +391,7 @@
 				DFDFFDF61D21E46E002E5598 /* heart5 in Resources */,
 				DF6705F41CE3BEA6003AF6F2 /* GameScene.sks in Resources */,
 				DFDFFE7E1D238CF6002E5598 /* menu_bg12 in Resources */,
+				DFDFFEA01D23A9DD002E5598 /* player_dying4 in Resources */,
 				DFDFFE7B1D238CF6002E5598 /* menu_bg15 in Resources */,
 				DF26E59F1CEAA4C4009EE213 /* player_jump1 in Resources */,
 				DFDFFE801D238CF6002E5598 /* menu_bg10 in Resources */,
@@ -381,6 +400,7 @@
 				DFCC7E7D1CE53D500053998C /* game_ground in Resources */,
 				DFDFFDF21D21E46E002E5598 /* heart1 in Resources */,
 				DFDFFE0D1D221B91002E5598 /* heart_icon in Resources */,
+				DFDFFEA31D23A9DD002E5598 /* player_dying1 in Resources */,
 				DF6857FC1CE3DB05003E13CD /* player_walk4 in Resources */,
 				DFDFFE891D238CF6002E5598 /* menu_bg1 in Resources */,
 				DF26E5A01CEAA4C4009EE213 /* player_jump2 in Resources */,
@@ -402,6 +422,7 @@
 				DFDFFDFC1D21F121002E5598 /* MenuScene.sks in Resources */,
 				DF6857F91CE3DB05003E13CD /* player_walk1 in Resources */,
 				DF6705FC1CE3BEA6003AF6F2 /* Assets.xcassets in Resources */,
+				DFDFFEA21D23A9DD002E5598 /* player_dying2 in Resources */,
 				DFDFFDF41D21E46E002E5598 /* heart3 in Resources */,
 				DF6705FA1CE3BEA6003AF6F2 /* Main.storyboard in Resources */,
 				DFDFFE941D239AC5002E5598 /* zombie4 in Resources */,
@@ -417,8 +438,11 @@
 				DFDFFE261D234440002E5598 /* I Don't Want To Set The World On Fire-The Ink Spots.mp3 in Resources */,
 				DFDFFE221D234429002E5598 /* The Ink Spots - Maybe.mp3 in Resources */,
 				DF26E5A31CEAA4C4009EE213 /* player_jump5 in Resources */,
+				DFDFFE9F1D23A9DD002E5598 /* player_dying5 in Resources */,
+				DFDFFEA11D23A9DD002E5598 /* player_dying3 in Resources */,
 				DF6857FB1CE3DB05003E13CD /* player_walk3 in Resources */,
 				DFDFFE821D238CF6002E5598 /* menu_bg8 in Resources */,
+				DFDFFE9E1D23A9DD002E5598 /* player_dying6 in Resources */,
 				DFDFFE051D2204F1002E5598 /* quit_button in Resources */,
 				DFDFFE231D234429002E5598 /* The Ink Spots - It's All Over But The Crying.mp3 in Resources */,
 				DF26E5921CEA8190009EE213 /* smoke4 in Resources */,
