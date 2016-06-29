@@ -34,7 +34,6 @@
 		DF6857FC1CE3DB05003E13CD /* player_walk4 in Resources */ = {isa = PBXBuildFile; fileRef = DF6857F81CE3DB05003E13CD /* player_walk4 */; };
 		DF76784C1D1A2762001315E1 /* grass_platform.png in Resources */ = {isa = PBXBuildFile; fileRef = DF76784B1D1A2762001315E1 /* grass_platform.png */; };
 		DFCC7E7D1CE53D500053998C /* game_ground in Resources */ = {isa = PBXBuildFile; fileRef = DFCC7E7C1CE53D500053998C /* game_ground */; };
-		DFCC7E851CE544830053998C /* game_background in Resources */ = {isa = PBXBuildFile; fileRef = DFCC7E841CE544830053998C /* game_background */; };
 		DFDE1AA61CEE63E800218F32 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDE1AA51CEE63E800218F32 /* Player.m */; };
 		DFDFFDF21D21E46E002E5598 /* heart1 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFDEB1D21E46E002E5598 /* heart1 */; };
 		DFDFFDF31D21E46E002E5598 /* heart2 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFDEC1D21E46E002E5598 /* heart2 */; };
@@ -51,17 +50,39 @@
 		DFDFFE071D220506002E5598 /* play_button in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE061D220506002E5598 /* play_button */; };
 		DFDFFE091D220569002E5598 /* deep_inside_logo in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE081D220569002E5598 /* deep_inside_logo */; };
 		DFDFFE0D1D221B91002E5598 /* heart_icon in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE0C1D221B91002E5598 /* heart_icon */; };
-		DFDFFE131D2233FF002E5598 /* zombie5 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE0E1D2233FF002E5598 /* zombie5 */; };
-		DFDFFE141D2233FF002E5598 /* zombie4 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE0F1D2233FF002E5598 /* zombie4 */; };
-		DFDFFE151D2233FF002E5598 /* zombie3 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE101D2233FF002E5598 /* zombie3 */; };
-		DFDFFE161D2233FF002E5598 /* zombie2 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE111D2233FF002E5598 /* zombie2 */; };
-		DFDFFE171D2233FF002E5598 /* zombie1 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE121D2233FF002E5598 /* zombie1 */; };
 		DFDFFE191D22A031002E5598 /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDFFE181D22A031002E5598 /* Monster.m */; };
 		DFDFFE1E1D233168002E5598 /* Zombie.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDFFE1D1D233168002E5598 /* Zombie.m */; };
+		DFDFFE221D234429002E5598 /* The Ink Spots - Maybe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE1F1D234429002E5598 /* The Ink Spots - Maybe.mp3 */; };
+		DFDFFE231D234429002E5598 /* The Ink Spots - It's All Over But The Crying.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE201D234429002E5598 /* The Ink Spots - It's All Over But The Crying.mp3 */; };
+		DFDFFE241D234429002E5598 /* The Ink Spots - Into Each Life Some Rain Must Fall.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE211D234429002E5598 /* The Ink Spots - Into Each Life Some Rain Must Fall.mp3 */; };
+		DFDFFE261D234440002E5598 /* I Don't Want To Set The World On Fire-The Ink Spots.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE251D234440002E5598 /* I Don't Want To Set The World On Fire-The Ink Spots.mp3 */; };
+		DFDFFE281D234449002E5598 /* Ink Spots - If I Didn't Care.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE271D234449002E5598 /* Ink Spots - If I Didn't Care.mp3 */; };
+		DFDFFE7A1D238CF6002E5598 /* menu_bg16 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE6A1D238CF6002E5598 /* menu_bg16 */; };
+		DFDFFE7B1D238CF6002E5598 /* menu_bg15 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE6B1D238CF6002E5598 /* menu_bg15 */; };
+		DFDFFE7C1D238CF6002E5598 /* menu_bg14 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE6C1D238CF6002E5598 /* menu_bg14 */; };
+		DFDFFE7D1D238CF6002E5598 /* menu_bg13 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE6D1D238CF6002E5598 /* menu_bg13 */; };
+		DFDFFE7E1D238CF6002E5598 /* menu_bg12 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE6E1D238CF6002E5598 /* menu_bg12 */; };
+		DFDFFE7F1D238CF6002E5598 /* menu_bg11 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE6F1D238CF6002E5598 /* menu_bg11 */; };
+		DFDFFE801D238CF6002E5598 /* menu_bg10 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE701D238CF6002E5598 /* menu_bg10 */; };
+		DFDFFE811D238CF6002E5598 /* menu_bg9 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE711D238CF6002E5598 /* menu_bg9 */; };
+		DFDFFE821D238CF6002E5598 /* menu_bg8 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE721D238CF6002E5598 /* menu_bg8 */; };
+		DFDFFE831D238CF6002E5598 /* menu_bg7 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE731D238CF6002E5598 /* menu_bg7 */; };
+		DFDFFE841D238CF6002E5598 /* menu_bg6 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE741D238CF6002E5598 /* menu_bg6 */; };
+		DFDFFE851D238CF6002E5598 /* menu_bg5 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE751D238CF6002E5598 /* menu_bg5 */; };
+		DFDFFE861D238CF6002E5598 /* menu_bg4 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE761D238CF6002E5598 /* menu_bg4 */; };
+		DFDFFE871D238CF6002E5598 /* menu_bg3 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE771D238CF6002E5598 /* menu_bg3 */; };
+		DFDFFE881D238CF6002E5598 /* menu_bg2 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE781D238CF6002E5598 /* menu_bg2 */; };
+		DFDFFE891D238CF6002E5598 /* menu_bg1 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE791D238CF6002E5598 /* menu_bg1 */; };
+		DFDFFE8B1D239100002E5598 /* deep_inside_menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE8A1D239100002E5598 /* deep_inside_menu.mp3 */; };
+		DFDFFE8D1D2397C3002E5598 /* game_background in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE8C1D2397C3002E5598 /* game_background */; };
+		DFDFFE931D239AC5002E5598 /* zombie5 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE8E1D239AC5002E5598 /* zombie5 */; };
+		DFDFFE941D239AC5002E5598 /* zombie4 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE8F1D239AC5002E5598 /* zombie4 */; };
+		DFDFFE951D239AC5002E5598 /* zombie3 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE901D239AC5002E5598 /* zombie3 */; };
+		DFDFFE961D239AC5002E5598 /* zombie2 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE911D239AC5002E5598 /* zombie2 */; };
+		DFDFFE971D239AC5002E5598 /* zombie1 in Resources */ = {isa = PBXBuildFile; fileRef = DFDFFE921D239AC5002E5598 /* zombie1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B07D7AD11D2350FA004401D2 /* MassRelation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MassRelation.h; sourceTree = "<group>"; };
 		DF26E5881CEA8190009EE213 /* smoke7 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke7; sourceTree = "<group>"; };
 		DF26E5891CEA8190009EE213 /* smoke6 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke6; sourceTree = "<group>"; };
 		DF26E58A1CEA8190009EE213 /* smoke5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke5; sourceTree = "<group>"; };
@@ -95,7 +116,6 @@
 		DF76784B1D1A2762001315E1 /* grass_platform.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass_platform.png; sourceTree = "<group>"; };
 		DF76784D1D1A4201001315E1 /* categories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = categories.h; sourceTree = "<group>"; };
 		DFCC7E7C1CE53D500053998C /* game_ground */ = {isa = PBXFileReference; lastKnownFileType = file; path = game_ground; sourceTree = "<group>"; };
-		DFCC7E841CE544830053998C /* game_background */ = {isa = PBXFileReference; lastKnownFileType = file; path = game_background; sourceTree = "<group>"; };
 		DFDE1AA41CEE63E800218F32 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		DFDE1AA51CEE63E800218F32 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		DFDE1AA81CEE668B00218F32 /* textures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = textures.h; sourceTree = "<group>"; };
@@ -115,15 +135,39 @@
 		DFDFFE061D220506002E5598 /* play_button */ = {isa = PBXFileReference; lastKnownFileType = file; path = play_button; sourceTree = "<group>"; };
 		DFDFFE081D220569002E5598 /* deep_inside_logo */ = {isa = PBXFileReference; lastKnownFileType = file; path = deep_inside_logo; sourceTree = "<group>"; };
 		DFDFFE0C1D221B91002E5598 /* heart_icon */ = {isa = PBXFileReference; lastKnownFileType = file; path = heart_icon; sourceTree = "<group>"; };
-		DFDFFE0E1D2233FF002E5598 /* zombie5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie5; sourceTree = "<group>"; };
-		DFDFFE0F1D2233FF002E5598 /* zombie4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie4; sourceTree = "<group>"; };
-		DFDFFE101D2233FF002E5598 /* zombie3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie3; sourceTree = "<group>"; };
-		DFDFFE111D2233FF002E5598 /* zombie2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie2; sourceTree = "<group>"; };
-		DFDFFE121D2233FF002E5598 /* zombie1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie1; sourceTree = "<group>"; };
 		DFDFFE181D22A031002E5598 /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
 		DFDFFE1A1D22A054002E5598 /* Monster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
 		DFDFFE1B1D232F5F002E5598 /* Zombie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zombie.h; sourceTree = "<group>"; };
 		DFDFFE1D1D233168002E5598 /* Zombie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zombie.m; sourceTree = "<group>"; };
+		DFDFFE1F1D234429002E5598 /* The Ink Spots - Maybe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Ink Spots - Maybe.mp3"; sourceTree = "<group>"; };
+		DFDFFE201D234429002E5598 /* The Ink Spots - It's All Over But The Crying.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Ink Spots - It's All Over But The Crying.mp3"; sourceTree = "<group>"; };
+		DFDFFE211D234429002E5598 /* The Ink Spots - Into Each Life Some Rain Must Fall.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Ink Spots - Into Each Life Some Rain Must Fall.mp3"; sourceTree = "<group>"; };
+		DFDFFE251D234440002E5598 /* I Don't Want To Set The World On Fire-The Ink Spots.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "I Don't Want To Set The World On Fire-The Ink Spots.mp3"; sourceTree = "<group>"; };
+		DFDFFE271D234449002E5598 /* Ink Spots - If I Didn't Care.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ink Spots - If I Didn't Care.mp3"; sourceTree = "<group>"; };
+		DFDFFE291D236DCC002E5598 /* Music.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
+		DFDFFE6A1D238CF6002E5598 /* menu_bg16 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg16; sourceTree = "<group>"; };
+		DFDFFE6B1D238CF6002E5598 /* menu_bg15 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg15; sourceTree = "<group>"; };
+		DFDFFE6C1D238CF6002E5598 /* menu_bg14 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg14; sourceTree = "<group>"; };
+		DFDFFE6D1D238CF6002E5598 /* menu_bg13 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg13; sourceTree = "<group>"; };
+		DFDFFE6E1D238CF6002E5598 /* menu_bg12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg12; sourceTree = "<group>"; };
+		DFDFFE6F1D238CF6002E5598 /* menu_bg11 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg11; sourceTree = "<group>"; };
+		DFDFFE701D238CF6002E5598 /* menu_bg10 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg10; sourceTree = "<group>"; };
+		DFDFFE711D238CF6002E5598 /* menu_bg9 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg9; sourceTree = "<group>"; };
+		DFDFFE721D238CF6002E5598 /* menu_bg8 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg8; sourceTree = "<group>"; };
+		DFDFFE731D238CF6002E5598 /* menu_bg7 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg7; sourceTree = "<group>"; };
+		DFDFFE741D238CF6002E5598 /* menu_bg6 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg6; sourceTree = "<group>"; };
+		DFDFFE751D238CF6002E5598 /* menu_bg5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg5; sourceTree = "<group>"; };
+		DFDFFE761D238CF6002E5598 /* menu_bg4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg4; sourceTree = "<group>"; };
+		DFDFFE771D238CF6002E5598 /* menu_bg3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg3; sourceTree = "<group>"; };
+		DFDFFE781D238CF6002E5598 /* menu_bg2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg2; sourceTree = "<group>"; };
+		DFDFFE791D238CF6002E5598 /* menu_bg1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_bg1; sourceTree = "<group>"; };
+		DFDFFE8A1D239100002E5598 /* deep_inside_menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = deep_inside_menu.mp3; sourceTree = "<group>"; };
+		DFDFFE8C1D2397C3002E5598 /* game_background */ = {isa = PBXFileReference; lastKnownFileType = file; path = game_background; sourceTree = "<group>"; };
+		DFDFFE8E1D239AC5002E5598 /* zombie5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie5; sourceTree = "<group>"; };
+		DFDFFE8F1D239AC5002E5598 /* zombie4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie4; sourceTree = "<group>"; };
+		DFDFFE901D239AC5002E5598 /* zombie3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie3; sourceTree = "<group>"; };
+		DFDFFE911D239AC5002E5598 /* zombie2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie2; sourceTree = "<group>"; };
+		DFDFFE921D239AC5002E5598 /* zombie1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +224,7 @@
 				DFDFFE1A1D22A054002E5598 /* Monster.h */,
 				DFDFFE1B1D232F5F002E5598 /* Zombie.h */,
 				DFDFFE1D1D233168002E5598 /* Zombie.m */,
-				B07D7AD11D2350FA004401D2 /* MassRelation.h */,
+				DFDFFE291D236DCC002E5598 /* Music.h */,
 			);
 			path = "Deep inside";
 			sourceTree = "<group>";
@@ -196,14 +240,36 @@
 		DFDE1AA71CEE657800218F32 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				DFDFFE251D234440002E5598 /* I Don't Want To Set The World On Fire-The Ink Spots.mp3 */,
+				DFDFFE271D234449002E5598 /* Ink Spots - If I Didn't Care.mp3 */,
+				DFDFFE1F1D234429002E5598 /* The Ink Spots - Maybe.mp3 */,
+				DFDFFE201D234429002E5598 /* The Ink Spots - It's All Over But The Crying.mp3 */,
+				DFDFFE211D234429002E5598 /* The Ink Spots - Into Each Life Some Rain Must Fall.mp3 */,
+				DFDFFE8A1D239100002E5598 /* deep_inside_menu.mp3 */,
+				DFDFFE6A1D238CF6002E5598 /* menu_bg16 */,
+				DFDFFE6B1D238CF6002E5598 /* menu_bg15 */,
+				DFDFFE6C1D238CF6002E5598 /* menu_bg14 */,
+				DFDFFE6D1D238CF6002E5598 /* menu_bg13 */,
+				DFDFFE6E1D238CF6002E5598 /* menu_bg12 */,
+				DFDFFE6F1D238CF6002E5598 /* menu_bg11 */,
+				DFDFFE701D238CF6002E5598 /* menu_bg10 */,
+				DFDFFE711D238CF6002E5598 /* menu_bg9 */,
+				DFDFFE721D238CF6002E5598 /* menu_bg8 */,
+				DFDFFE731D238CF6002E5598 /* menu_bg7 */,
+				DFDFFE741D238CF6002E5598 /* menu_bg6 */,
+				DFDFFE751D238CF6002E5598 /* menu_bg5 */,
+				DFDFFE761D238CF6002E5598 /* menu_bg4 */,
+				DFDFFE771D238CF6002E5598 /* menu_bg3 */,
+				DFDFFE781D238CF6002E5598 /* menu_bg2 */,
+				DFDFFE791D238CF6002E5598 /* menu_bg1 */,
 				DFDFFE081D220569002E5598 /* deep_inside_logo */,
 				DF76784B1D1A2762001315E1 /* grass_platform.png */,
+				DFDFFE8E1D239AC5002E5598 /* zombie5 */,
+				DFDFFE8F1D239AC5002E5598 /* zombie4 */,
+				DFDFFE901D239AC5002E5598 /* zombie3 */,
+				DFDFFE911D239AC5002E5598 /* zombie2 */,
+				DFDFFE921D239AC5002E5598 /* zombie1 */,
 				DFDFFDEB1D21E46E002E5598 /* heart1 */,
-				DFDFFE0E1D2233FF002E5598 /* zombie5 */,
-				DFDFFE0F1D2233FF002E5598 /* zombie4 */,
-				DFDFFE101D2233FF002E5598 /* zombie3 */,
-				DFDFFE111D2233FF002E5598 /* zombie2 */,
-				DFDFFE121D2233FF002E5598 /* zombie1 */,
 				DFDFFDEC1D21E46E002E5598 /* heart2 */,
 				DFDFFDED1D21E46E002E5598 /* heart3 */,
 				DFDFFDEE1D21E46E002E5598 /* heart4 */,
@@ -232,7 +298,7 @@
 				DF26E58C1CEA8190009EE213 /* smoke3 */,
 				DF26E58D1CEA8190009EE213 /* smoke2 */,
 				DF26E58E1CEA8190009EE213 /* smoke1 */,
-				DFCC7E841CE544830053998C /* game_background */,
+				DFDFFE8C1D2397C3002E5598 /* game_background */,
 				DFCC7E7C1CE53D500053998C /* game_ground */,
 			);
 			name = assets;
@@ -295,28 +361,41 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFDFFE171D2233FF002E5598 /* zombie1 in Resources */,
+				DFDFFE7F1D238CF6002E5598 /* menu_bg11 in Resources */,
+				DFDFFE7C1D238CF6002E5598 /* menu_bg14 in Resources */,
 				DFDFFDF71D21E46E002E5598 /* heart6 in Resources */,
 				DFDFFDF31D21E46E002E5598 /* heart2 in Resources */,
 				DF26E5931CEA8190009EE213 /* smoke3 in Resources */,
+				DFDFFE831D238CF6002E5598 /* menu_bg7 in Resources */,
+				DFDFFE971D239AC5002E5598 /* zombie1 in Resources */,
 				DFDFFDF51D21E46E002E5598 /* heart4 in Resources */,
 				DF26E5911CEA8190009EE213 /* smoke5 in Resources */,
 				DFDFFDF61D21E46E002E5598 /* heart5 in Resources */,
 				DF6705F41CE3BEA6003AF6F2 /* GameScene.sks in Resources */,
+				DFDFFE7E1D238CF6002E5598 /* menu_bg12 in Resources */,
+				DFDFFE7B1D238CF6002E5598 /* menu_bg15 in Resources */,
 				DF26E59F1CEAA4C4009EE213 /* player_jump1 in Resources */,
+				DFDFFE801D238CF6002E5598 /* menu_bg10 in Resources */,
+				DFDFFE861D238CF6002E5598 /* menu_bg4 in Resources */,
+				DFDFFE931D239AC5002E5598 /* zombie5 in Resources */,
 				DFCC7E7D1CE53D500053998C /* game_ground in Resources */,
-				DFDFFE161D2233FF002E5598 /* zombie2 in Resources */,
-				DFDFFE151D2233FF002E5598 /* zombie3 in Resources */,
 				DFDFFDF21D21E46E002E5598 /* heart1 in Resources */,
 				DFDFFE0D1D221B91002E5598 /* heart_icon in Resources */,
 				DF6857FC1CE3DB05003E13CD /* player_walk4 in Resources */,
+				DFDFFE891D238CF6002E5598 /* menu_bg1 in Resources */,
 				DF26E5A01CEAA4C4009EE213 /* player_jump2 in Resources */,
 				DF26E5901CEA8190009EE213 /* smoke6 in Resources */,
+				DFDFFE871D238CF6002E5598 /* menu_bg3 in Resources */,
 				DFDFFE071D220506002E5598 /* play_button in Resources */,
-				DFDFFE131D2233FF002E5598 /* zombie5 in Resources */,
+				DFDFFE841D238CF6002E5598 /* menu_bg6 in Resources */,
+				DFDFFE8B1D239100002E5598 /* deep_inside_menu.mp3 in Resources */,
 				DF6857FA1CE3DB05003E13CD /* player_walk2 in Resources */,
+				DFDFFE7D1D238CF6002E5598 /* menu_bg13 in Resources */,
 				DF76784C1D1A2762001315E1 /* grass_platform.png in Resources */,
 				DF26E5941CEA8190009EE213 /* smoke2 in Resources */,
+				DFDFFE851D238CF6002E5598 /* menu_bg5 in Resources */,
+				DFDFFE881D238CF6002E5598 /* menu_bg2 in Resources */,
+				DFDFFE951D239AC5002E5598 /* zombie3 in Resources */,
 				DF26E5A11CEAA4C4009EE213 /* player_jump3 in Resources */,
 				DF26E58F1CEA8190009EE213 /* smoke7 in Resources */,
 				DF6705FF1CE3BEA6003AF6F2 /* LaunchScreen.storyboard in Resources */,
@@ -325,19 +404,28 @@
 				DF6705FC1CE3BEA6003AF6F2 /* Assets.xcassets in Resources */,
 				DFDFFDF41D21E46E002E5598 /* heart3 in Resources */,
 				DF6705FA1CE3BEA6003AF6F2 /* Main.storyboard in Resources */,
+				DFDFFE941D239AC5002E5598 /* zombie4 in Resources */,
+				DFDFFE241D234429002E5598 /* The Ink Spots - Into Each Life Some Rain Must Fall.mp3 in Resources */,
 				DF26E5A21CEAA4C4009EE213 /* player_jump4 in Resources */,
 				DFDFFDF81D21E46E002E5598 /* heart7 in Resources */,
 				DFDFFE091D220569002E5598 /* deep_inside_logo in Resources */,
+				DFDFFE7A1D238CF6002E5598 /* menu_bg16 in Resources */,
 				DF26E5991CEA925A009EE213 /* smoke8 in Resources */,
 				DFDFFE031D21FD1D002E5598 /* menu_background.jpg in Resources */,
 				DF26E5951CEA8190009EE213 /* smoke1 in Resources */,
-				DFDFFE141D2233FF002E5598 /* zombie4 in Resources */,
-				DFCC7E851CE544830053998C /* game_background in Resources */,
+				DFDFFE281D234449002E5598 /* Ink Spots - If I Didn't Care.mp3 in Resources */,
+				DFDFFE261D234440002E5598 /* I Don't Want To Set The World On Fire-The Ink Spots.mp3 in Resources */,
+				DFDFFE221D234429002E5598 /* The Ink Spots - Maybe.mp3 in Resources */,
 				DF26E5A31CEAA4C4009EE213 /* player_jump5 in Resources */,
 				DF6857FB1CE3DB05003E13CD /* player_walk3 in Resources */,
+				DFDFFE821D238CF6002E5598 /* menu_bg8 in Resources */,
 				DFDFFE051D2204F1002E5598 /* quit_button in Resources */,
+				DFDFFE231D234429002E5598 /* The Ink Spots - It's All Over But The Crying.mp3 in Resources */,
 				DF26E5921CEA8190009EE213 /* smoke4 in Resources */,
+				DFDFFE811D238CF6002E5598 /* menu_bg9 in Resources */,
+				DFDFFE8D1D2397C3002E5598 /* game_background in Resources */,
 				DFDFFDFA1D21E57A002E5598 /* exit_door.png in Resources */,
+				DFDFFE961D239AC5002E5598 /* zombie2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

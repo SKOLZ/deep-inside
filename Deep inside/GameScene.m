@@ -13,6 +13,7 @@
 #import "Zombie.h"
 #import "textures.h"
 #import "categories.h"
+#import "Music.h"
 
 #define PLAYER_INITIAL_Y GROUND_TEXTURE.size.height + _player.size.height / 2
 #define DELTA 5
@@ -23,7 +24,7 @@
 #define CYCLES_MIN_WAIT 50
 #define CYCLES_WAIT_RANGE_ZOMBIE 100
 #define CYCLES_MIN_WAIT_ZOMBIE 30
-
+#define MUSIC_TRACK_SIZE 5
 
 
 @interface GameScene () <SKPhysicsContactDelegate> {
@@ -34,27 +35,62 @@
     int _zombies_cooldown;
     SKLabelNode* heartLabel;
     int hearts;
+    NSInteger currentSoundsIndex;
+    AVPlayer *mediaPlayer;
+    NSMutableArray<AVPlayerItem *> *soundList;
 }
 @end
 
 @implementation GameScene
 
+- (void)playerItemDidReachEnd:(NSNotification *)notification {
+    currentSoundsIndex++;
+    if (currentSoundsIndex == MUSIC_TRACK_SIZE) {
+        currentSoundsIndex = 0;
+    }
+    [self playNextAudio];
+}
+
+- (void)playNextAudio {
+    [mediaPlayer replaceCurrentItemWithPlayerItem:[soundList objectAtIndex:currentSoundsIndex]];
+    [mediaPlayer play];
+    mediaPlayer.actionAtItemEnd = AVPlayerActionAtItemEndNone;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(playerItemDidReachEnd:)
+                                                 name:AVPlayerItemDidPlayToEndTimeNotification
+                                               object:[mediaPlayer currentItem]];
+}
+
 -(void)didMoveToView:(SKView *)view {
+    currentSoundsIndex = 0;
+    soundList = [NSMutableArray arrayWithObjects: TRACK1, TRACK2, TRACK3, TRACK4, TRACK5, nil];
+
+    NSUInteger count = [soundList count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        // Select a random element between i and end of array to swap with.
+        unsigned long nElements = count - i;
+        unsigned long n = (arc4random() % nElements) + i;
+        [soundList exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+
+    mediaPlayer = [[AVPlayer alloc] init];
+    [self playNextAudio];
+
     self.physicsWorld.contactDelegate = self;
     hearts = 0;
     _floaters_cooldown = -1; // 2 seconds
     _zombies_cooldown = -1;
     // Create background color
-    
+
     _skyColor = [SKColor colorWithRed:0 green:0 blue:0 alpha:1.0];
     [self setBackgroundColor:_skyColor];
-    
+
     // Create background
-    
+
     SKAction* moveSkylineSprite = [SKAction moveByX:-BACKGROUND_TEXTURE.size.width y:0 duration:0.02 * BACKGROUND_TEXTURE.size.width];
     SKAction* resetSkylineSprite = [SKAction moveByX:(BACKGROUND_TEXTURE.size.width - 5) y:0 duration:0];
     SKAction* moveSkylineSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveSkylineSprite, resetSkylineSprite]]];
-    
+
     for( int i = 0; i < 2 + self.frame.size.width / ( BACKGROUND_TEXTURE.size.width ); i++ ) {
         SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:BACKGROUND_TEXTURE];
         [sprite setScale:0.8];
@@ -63,9 +99,9 @@
         [sprite runAction:moveSkylineSpritesForever];
         [self addChild:sprite];
     }
-    
+
     // Create ground
-    
+
     SKAction* moveGroundSprite = [SKAction moveByX:-GROUND_TEXTURE.size.width y:0 duration:0.003 * GROUND_TEXTURE.size.width];
     SKAction* resetGroundSprite = [SKAction moveByX:GROUND_TEXTURE.size.width y:0 duration:0];
     _moveGroundSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveGroundSprite, resetGroundSprite]]];
@@ -76,55 +112,55 @@
         [sprite runAction:_moveGroundSpritesForever];
         [self addChild:sprite];
     }
-    
+
     // Create ground physics container
-    
+
     SKNode* dummy = [SKNode node];
     dummy.position = CGPointMake(SCREEN_HALF_WIDTH, GROUND_TEXTURE.size.height - 5);
     dummy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(SCREEN_WIDTH, 1)];
     dummy.physicsBody.dynamic = NO;
     dummy.physicsBody.categoryBitMask = floorCategory;
     dummy.physicsBody.contactTestBitMask = playerCategory;
-    
+
     [self addChild:dummy];
-    
+
     // Create player
-    
+
     _player = [Player playerWithPosition: CGPointMake(FIXED_PLAYER_POS_X, PLAYER_INITIAL_Y)];
     [_player run];
     [self addChild:_player];
-    
+
     // Create exit button
-    
+
     SKSpriteNode* exitButton = [SKSpriteNode spriteNodeWithTexture:EXIT_TEXTURE];
     exitButton.position = CGPointMake(self.frame.size.width - exitButton.size.width, self.frame.size.height - 2 * exitButton.size.height);
     exitButton.name = @"exit";
     exitButton.zPosition = 1.0;
     [self addChild: exitButton];
-    
+
     // Create heart counter icon
-    
+
     SKSpriteNode* heartIcon = [SKSpriteNode spriteNodeWithTexture:HEART_ICON];
     heartIcon.position = CGPointMake(heartIcon.size.width/2 + 20, self.frame.size.height - 2 * heartIcon.size.height - 20);
     heartIcon.zPosition = 1.0;
     [self addChild: heartIcon];
-    
+
     // Create heart counter label
-    
+
     SKSpriteNode *heartLabelWrapper = [[SKSpriteNode alloc] init];//parent
     heartLabelWrapper.zPosition = 1.0;
-    
+
     heartLabel = [SKLabelNode labelNodeWithFontNamed:@"Verdana-Bold"];
     heartLabel.text = [NSString stringWithFormat:@"%d", hearts];
     heartLabel.fontSize = 36;
     heartLabel.fontColor = [SKColor whiteColor];
     heartLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     heartLabel.position = CGPointMake(0, 0);
-    
+
     [heartLabelWrapper addChild:heartLabel];
     heartLabelWrapper.anchorPoint = CGPointMake(1.0,1.0);
     heartLabelWrapper.position = CGPointMake(heartIcon.size.width/2 + 70, self.frame.size.height - 2 * heartIcon.size.height - 35);
-    
+
     [self addChild:heartLabelWrapper];
 }
 
@@ -143,14 +179,14 @@
 //        [self.view presentScene:gameOverScene transition:transition];
         [self goToMenu];
     }
-    
+
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:point];
-    
+
     if ([node.name isEqualToString:@"exit"]) {
         [self goToMenu];
     } else {
@@ -164,13 +200,13 @@
 
 -(void)spawnFloatGround {
     // ***** Decision making
-    
+
     if  (_floaters_cooldown < 0) {
         _floaters_cooldown = (arc4random() % CYCLES_WAIT_RANGE) + CYCLES_MIN_WAIT; // +1 to avoid double instant spawn
     } else return;
-    
+
     // ***** Ok to spawn, keep going
-    
+
     int random_width = (2 + arc4random_uniform(3)) * 100;
     SKSpriteNode* random_block = [SKSpriteNode spriteNodeWithTexture:GRASS_PLATFORM size:CGSizeMake(random_width, 50)];
     random_block.position = CGPointMake(SCREEN_WIDTH * 1.1, PLAYER_INITIAL_Y * 2.5);
@@ -190,27 +226,27 @@
 
 -(void)spawnMonster {
     // ***** Decision making
-    
+
     if  (_zombies_cooldown < 0) {
         _zombies_cooldown = (arc4random() % CYCLES_WAIT_RANGE_ZOMBIE) + CYCLES_MIN_WAIT_ZOMBIE;
     } else return;
-    
+
     // ***** Ok to spawn, keep going
-    
+
     // Create sprite
-    
+
     Zombie* monster = [Zombie initWithPos:CGPointMake(SCREEN_WIDTH * 1.1, PLAYER_INITIAL_Y)];
-    
+
     // Create the monster slightly off-screen along the right edge,
     [monster walk];
     [self addChild:monster];
-    
+
     // Determine speed of the monster
     int minDuration = 2.0;
     int maxDuration = 4.0;
     int rangeDuration = maxDuration - minDuration;
     int actualDuration = (arc4random() % rangeDuration) + minDuration;
-    
+
     // Create the actions
     SKAction * actionMove = [SKAction moveTo:CGPointMake(-monster.size.width/2, PLAYER_INITIAL_Y) duration:actualDuration];
     SKAction * actionMoveDone = [SKAction removeFromParent];
@@ -229,10 +265,10 @@
 }
 
 - (void)didSimulatePhysics {
-    
+
     CGPoint fixedXPos = _player.position;
     fixedXPos.x = FIXED_PLAYER_POS_X;
-    
+
     [_player setPosition:fixedXPos];
 }
 
@@ -245,9 +281,9 @@
         firstBody = contact.bodyB;
         secondBody = contact.bodyA;
     }
-    
+
     // **** Possible contacts begin
-    
+
     // Player hits floor
     if ((firstBody.categoryBitMask & playerCategory) != 0 && (secondBody.categoryBitMask & floorCategory) != 0) {
         if (_player.state != PLAYER_DISAPPEARED) {
@@ -260,7 +296,7 @@
             [self goToFinishGame:NO];
         }
     }
-    
+
 }
 
 @end
