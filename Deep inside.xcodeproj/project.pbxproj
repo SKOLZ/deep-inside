@@ -61,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B07D7AD11D2350FA004401D2 /* MassRelation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MassRelation.h; sourceTree = "<group>"; };
 		DF26E5881CEA8190009EE213 /* smoke7 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke7; sourceTree = "<group>"; };
 		DF26E5891CEA8190009EE213 /* smoke6 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke6; sourceTree = "<group>"; };
 		DF26E58A1CEA8190009EE213 /* smoke5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke5; sourceTree = "<group>"; };
@@ -179,6 +180,7 @@
 				DFDFFE1A1D22A054002E5598 /* Monster.h */,
 				DFDFFE1B1D232F5F002E5598 /* Zombie.h */,
 				DFDFFE1D1D233168002E5598 /* Zombie.m */,
+				B07D7AD11D2350FA004401D2 /* MassRelation.h */,
 			);
 			path = "Deep inside";
 			sourceTree = "<group>";
@@ -468,6 +470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Deep inside/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "WS.Deep-inside";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -479,6 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Deep inside/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "WS.Deep-inside";
 				PRODUCT_NAME = "$(TARGET_NAME)";

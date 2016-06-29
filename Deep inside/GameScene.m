@@ -14,6 +14,7 @@
 
 #define PLAYER_INITIAL_Y GROUND_TEXTURE.size.height + _player.size.height / 2
 #define DELTA 5
+#define SCREEN_WIDTH self.frame.size.width
 #define SCREEN_HALF_WIDTH self.frame.size.width / 2
 #define FIXED_PLAYER_POS_X self.frame.size.width / 4
 
@@ -22,6 +23,7 @@
     Player* _player;
     SKColor* _skyColor;
     SKAction* _moveGroundSpritesForever;
+    SKAction* _groundAction;
     int _cooldown;
     SKLabelNode* heartLabel;
     int hearts;
@@ -57,9 +59,10 @@
     // Create ground
     
     SKAction* moveGroundSprite = [SKAction moveByX:-GROUND_TEXTURE.size.width y:0 duration:0.003 * GROUND_TEXTURE.size.width];
+    _groundAction = moveGroundSprite;
     SKAction* resetGroundSprite = [SKAction moveByX:GROUND_TEXTURE.size.width y:0 duration:0];
     _moveGroundSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveGroundSprite, resetGroundSprite]]];
-    
+
     for( int i = 0; i < 2 + self.frame.size.width / ( GROUND_TEXTURE.size.width ); i++ ) {
         SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:GROUND_TEXTURE];
         sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height);
@@ -70,8 +73,8 @@
     // Create ground physics container
     
     SKNode* dummy = [SKNode node];
-    dummy.position = CGPointMake(0, GROUND_TEXTURE.size.height - 5);
-    dummy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width, 1)];
+    dummy.position = CGPointMake(SCREEN_HALF_WIDTH, GROUND_TEXTURE.size.height - 5);
+    dummy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(SCREEN_WIDTH, 1)];
     dummy.physicsBody.dynamic = NO;
     dummy.physicsBody.categoryBitMask = floorCategory;
     dummy.physicsBody.contactTestBitMask = playerCategory;
@@ -142,16 +145,17 @@
 }
 
 -(void)spawnFloatGround {
-    SKSpriteNode* random_block = [SKSpriteNode spriteNodeWithTexture:GRASS_PLATFORM size:CGSizeMake(300, 50)];
-    random_block.position = CGPointMake(2*[UIScreen mainScreen].bounds.size.width, PLAYER_INITIAL_Y * 2.5);
-    random_block.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(250, 20)];
+    int random_width = (2 + arc4random_uniform(3)) * 100;
+    SKSpriteNode* random_block = [SKSpriteNode spriteNodeWithTexture:GRASS_PLATFORM size:CGSizeMake(random_width, 50)];
+    random_block.position = CGPointMake(SCREEN_WIDTH * 1.1, PLAYER_INITIAL_Y * 2.5);
+    random_block.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(random_width * 0.84, 20)];
     random_block.physicsBody.affectedByGravity = NO;
     random_block.physicsBody.dynamic = NO;
     random_block.physicsBody.categoryBitMask = floorCategory;
     random_block.physicsBody.contactTestBitMask = playerCategory;
     [random_block runAction:_moveGroundSpritesForever];
     [self addChild:random_block];
-    [self performSelector: @selector(killFloatGround:) withObject: random_block afterDelay: 5];
+    [self performSelector: @selector(killFloatGround:) withObject: random_block afterDelay: 4];
 }
 
 -(void)killFloatGround:(SKSpriteNode*) floatingGround {
@@ -159,12 +163,11 @@
 }
 
 -(void)update:(NSTimeInterval)currentTime {
-//    NSLog(@"cooldown: %d", _cooldown);
     if  (_cooldown < 0) {
 //        NSLog(@"espaunio");
         [self spawnFloatGround];
-        int rand = 10 + arc4random_uniform(5);
-        _cooldown = (rand + 1) * 100; // +1 to avoid double instant spawn
+        int rand = 1 + arc4random_uniform(3);
+        _cooldown = (rand + 1) * 50; // +1 to avoid double instant spawn
     }
     _cooldown--;
 }

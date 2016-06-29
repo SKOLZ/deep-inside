@@ -9,16 +9,18 @@
 #import "Player.h"
 #import "textures.h"
 #import "categories.h"
+#import "MassRelation.h"
 
 @implementation Player
 +(instancetype)playerWithPosition: (CGPoint) pos {
     Player* p = [[Player alloc] initWithTexture: PLAYER_WALK1];
     p.position = pos;
-    p.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:p.frame.size];
+    p.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(p.frame.size.width/2, p.frame.size.height)];
     p.physicsBody.dynamic = YES;
     p.physicsBody.allowsRotation = NO;
     p.physicsBody.categoryBitMask = playerCategory;
     p.physicsBody.contactTestBitMask = floorCategory;
+    p.physicsBody.mass = PLAYER_MASS;
     return p;
 }
 
