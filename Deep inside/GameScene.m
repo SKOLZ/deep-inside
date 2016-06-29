@@ -11,11 +11,13 @@
 #import "Player.h"
 #import "textures.h"
 #import "categories.h"
+#import "Music.h"
 
 #define PLAYER_INITIAL_Y GROUND_TEXTURE.size.height + _player.size.height / 2
 #define DELTA 5
 #define SCREEN_HALF_WIDTH self.frame.size.width / 2
 #define FIXED_PLAYER_POS_X self.frame.size.width / 4
+#define MUSIC_TRACK_SIZE 5
 
 
 @interface GameScene () <SKPhysicsContactDelegate> {
@@ -25,12 +27,36 @@
     int _cooldown;
     SKLabelNode* heartLabel;
     int hearts;
+    NSInteger currentSoundsIndex;
+    AVPlayer *mediaPlayer;
+    NSArray<AVPlayerItem *> *soundList;
 }
 @end
 
 @implementation GameScene
 
+- (void)playerItemDidReachEnd:(NSNotification *)notification {
+    currentSoundsIndex++;
+    [self playNextAudio];
+}
+
+- (void)playNextAudio {
+    NSLog(@"audioooo");
+    [mediaPlayer replaceCurrentItemWithPlayerItem:[soundList objectAtIndex:currentSoundsIndex]];
+    [mediaPlayer play];
+    mediaPlayer.actionAtItemEnd = AVPlayerActionAtItemEndNone;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(playerItemDidReachEnd:)
+                                                 name:AVPlayerItemDidPlayToEndTimeNotification
+                                               object:[mediaPlayer currentItem]];
+}
+
 -(void)didMoveToView:(SKView *)view {
+    currentSoundsIndex = 0;
+    soundList = @[TRACK1, TRACK2, TRACK3, TRACK4, TRACK5];
+    mediaPlayer = [[AVPlayer alloc] init];
+    [self playNextAudio];
+    
     self.physicsWorld.contactDelegate = self;
     hearts = 0;
     _cooldown = -1; // 2 seconds

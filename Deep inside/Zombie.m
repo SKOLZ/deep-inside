@@ -17,7 +17,7 @@
 
 +(instancetype)monsterWithPosition: (CGPoint) pos {
     
-    Monster* m = [super monsterWithPosition: pos andTexture: ZOMBIE1];
+    Zombie* m = [super monsterWithPosition: pos andTexture: ZOMBIE1];
     m.position = pos;
     m.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:m.frame.size];
     m.physicsBody.categoryBitMask = monsterCategory;
