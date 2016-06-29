@@ -9,6 +9,8 @@
 #import "GameScene.h"
 #import "MenuScene.h"
 #import "Player.h"
+#import "Monster.h"
+#import "Zombie.h"
 #import "textures.h"
 #import "categories.h"
 
@@ -17,14 +19,19 @@
 #define SCREEN_WIDTH self.frame.size.width
 #define SCREEN_HALF_WIDTH self.frame.size.width / 2
 #define FIXED_PLAYER_POS_X self.frame.size.width / 4
+#define CYCLES_WAIT_RANGE 200
+#define CYCLES_MIN_WAIT 50
+#define CYCLES_WAIT_RANGE_ZOMBIE 100
+#define CYCLES_MIN_WAIT_ZOMBIE 30
+
 
 
 @interface GameScene () <SKPhysicsContactDelegate> {
     Player* _player;
     SKColor* _skyColor;
     SKAction* _moveGroundSpritesForever;
-    SKAction* _groundAction;
-    int _cooldown;
+    int _floaters_cooldown;
+    int _zombies_cooldown;
     SKLabelNode* heartLabel;
     int hearts;
 }
@@ -35,7 +42,8 @@
 -(void)didMoveToView:(SKView *)view {
     self.physicsWorld.contactDelegate = self;
     hearts = 0;
-    _cooldown = -1; // 2 seconds
+    _floaters_cooldown = -1; // 2 seconds
+    _zombies_cooldown = -1;
     // Create background color
     
     _skyColor = [SKColor colorWithRed:0 green:0 blue:0 alpha:1.0];
@@ -59,7 +67,6 @@
     // Create ground
     
     SKAction* moveGroundSprite = [SKAction moveByX:-GROUND_TEXTURE.size.width y:0 duration:0.003 * GROUND_TEXTURE.size.width];
-    _groundAction = moveGroundSprite;
     SKAction* resetGroundSprite = [SKAction moveByX:GROUND_TEXTURE.size.width y:0 duration:0];
     _moveGroundSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveGroundSprite, resetGroundSprite]]];
 
@@ -128,6 +135,17 @@
     [self.view presentScene:menuScene transition:transition];
 }
 
+-(void)goToFinishGame:(BOOL)won {
+    if (!won) {
+//        GameOverScene *gameOverScene = [GameOverScene nodeWithFileNamed:@"GameOverScene"];
+//        gameOverScene.scaleMode = SKSceneScaleModeAspectFill;
+//        SKTransition *transition = [SKTransition flipVerticalWithDuration:0.5];
+//        [self.view presentScene:gameOverScene transition:transition];
+        [self goToMenu];
+    }
+    
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInNode:self];
@@ -145,6 +163,14 @@
 }
 
 -(void)spawnFloatGround {
+    // ***** Decision making
+    
+    if  (_floaters_cooldown < 0) {
+        _floaters_cooldown = (arc4random() % CYCLES_WAIT_RANGE) + CYCLES_MIN_WAIT; // +1 to avoid double instant spawn
+    } else return;
+    
+    // ***** Ok to spawn, keep going
+    
     int random_width = (2 + arc4random_uniform(3)) * 100;
     SKSpriteNode* random_block = [SKSpriteNode spriteNodeWithTexture:GRASS_PLATFORM size:CGSizeMake(random_width, 50)];
     random_block.position = CGPointMake(SCREEN_WIDTH * 1.1, PLAYER_INITIAL_Y * 2.5);
@@ -162,14 +188,44 @@
     [self removeChildrenInArray:[NSArray arrayWithObject:floatingGround]];
 }
 
+-(void)spawnMonster {
+    // ***** Decision making
+    
+    if  (_zombies_cooldown < 0) {
+        _zombies_cooldown = (arc4random() % CYCLES_WAIT_RANGE_ZOMBIE) + CYCLES_MIN_WAIT_ZOMBIE;
+    } else return;
+    
+    // ***** Ok to spawn, keep going
+    
+    // Create sprite
+    
+    Zombie* monster = [Zombie initWithPos:CGPointMake(SCREEN_WIDTH * 1.1, PLAYER_INITIAL_Y)];
+    
+    // Create the monster slightly off-screen along the right edge,
+    [monster walk];
+    [self addChild:monster];
+    
+    // Determine speed of the monster
+    int minDuration = 2.0;
+    int maxDuration = 4.0;
+    int rangeDuration = maxDuration - minDuration;
+    int actualDuration = (arc4random() % rangeDuration) + minDuration;
+    
+    // Create the actions
+    SKAction * actionMove = [SKAction moveTo:CGPointMake(-monster.size.width/2, PLAYER_INITIAL_Y) duration:actualDuration];
+    SKAction * actionMoveDone = [SKAction removeFromParent];
+    [monster runAction:[SKAction sequence:@[actionMove, actionMoveDone]]];
+}
+
 -(void)update:(NSTimeInterval)currentTime {
-    if  (_cooldown < 0) {
-//        NSLog(@"espaunio");
-        [self spawnFloatGround];
-        int rand = 1 + arc4random_uniform(3);
-        _cooldown = (rand + 1) * 50; // +1 to avoid double instant spawn
-    }
-    _cooldown--;
+    [self spawnFloatGround];
+    [self spawnMonster];
+    [self applyCountdowns];
+}
+
+-(void)applyCountdowns {
+    _zombies_cooldown--;
+    _floaters_cooldown--;
 }
 
 - (void)didSimulatePhysics {
@@ -182,15 +238,29 @@
 
 -(void)didBeginContact:(SKPhysicsContact *)contact {
     SKPhysicsBody *firstBody, *secondBody;
-    firstBody = contact.bodyA;
-    secondBody = contact.bodyB;
+    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask) {
+        firstBody = contact.bodyA;
+        secondBody = contact.bodyB;
+    } else {
+        firstBody = contact.bodyB;
+        secondBody = contact.bodyA;
+    }
     
-    if((firstBody.categoryBitMask == playerCategory && secondBody.categoryBitMask == floorCategory) ||
-       (secondBody.categoryBitMask == playerCategory && firstBody.categoryBitMask == floorCategory)) {
+    // **** Possible contacts begin
+    
+    // Player hits floor
+    if ((firstBody.categoryBitMask & playerCategory) != 0 && (secondBody.categoryBitMask & floorCategory) != 0) {
         if (_player.state != PLAYER_DISAPPEARED) {
             [_player run];
         }
     }
+    // Player hits monster
+    if ((firstBody.categoryBitMask & playerCategory) != 0 && (secondBody.categoryBitMask & monsterCategory) != 0) {
+        if (_player.state != PLAYER_DISAPPEARED) {
+            [self goToFinishGame:NO];
+        }
+    }
+    
 }
 
 @end

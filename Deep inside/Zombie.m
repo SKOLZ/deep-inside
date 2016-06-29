@@ -15,14 +15,8 @@
 
 @implementation Zombie
 
-+(instancetype)monsterWithPosition: (CGPoint) pos {
-    
-    Monster* m = [super monsterWithPosition: pos andTexture: ZOMBIE1];
-    m.position = pos;
-    m.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:m.frame.size];
-    m.physicsBody.categoryBitMask = monsterCategory;
-    m.physicsBody.contactTestBitMask = playerCategory;
-    return m;
++(instancetype)initWithPos: (CGPoint) pos {
+    return [super monsterWithPosition: pos andTexture: ZOMBIE1];
 }
 
 -(void)walk {
