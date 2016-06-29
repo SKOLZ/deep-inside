@@ -11,7 +11,8 @@
 typedef NS_ENUM(NSInteger, PlayerState) {
     PLAYER_RUNNING,
     PLAYER_JUMPING,
-    PLAYER_DISAPPEARED
+    PLAYER_DISAPPEARED,
+    PLAYER_DEAD
 };
 @interface Player : SKSpriteNode
 

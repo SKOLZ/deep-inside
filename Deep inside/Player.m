@@ -64,4 +64,12 @@
     }];
 }
 
+-(void)die {
+    self.state = PLAYER_DEAD;
+    [self setTexture:PLAYER_DIE1];
+    SKAction* die = [SKAction repeatAction:[SKAction animateWithTextures:@[PLAYER_DIE1, PLAYER_DIE2, PLAYER_DIE3, PLAYER_DIE4, PLAYER_DIE5, PLAYER_DIE6] timePerFrame: 0.1] count: 1];
+    [self removeAllActions];
+    [self runAction: die];
+}
+
 @end

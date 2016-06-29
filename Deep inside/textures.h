@@ -31,6 +31,13 @@
 #define PLAYER_SMOKE7 [SKTexture textureWithImageNamed:@"smoke7"]
 #define PLAYER_SMOKE8 [SKTexture textureWithImageNamed:@"smoke8"]
 
+#define PLAYER_DIE1 [SKTexture textureWithImageNamed:@"player_dying1"]
+#define PLAYER_DIE2 [SKTexture textureWithImageNamed:@"player_dying2"]
+#define PLAYER_DIE3 [SKTexture textureWithImageNamed:@"player_dying3"]
+#define PLAYER_DIE4 [SKTexture textureWithImageNamed:@"player_dying4"]
+#define PLAYER_DIE5 [SKTexture textureWithImageNamed:@"player_dying5"]
+#define PLAYER_DIE6 [SKTexture textureWithImageNamed:@"player_dying6"]
+
 // MONSTERS
 
 #define ZOMBIE1 [SKTexture textureWithImageNamed:@"zombie1"]
