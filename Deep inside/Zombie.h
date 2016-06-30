@@ -11,6 +11,5 @@
 @interface Zombie : Monster
 
 +(Zombie*)initWithPos: (CGPoint) pos;
--(void)walk;
 
 @end

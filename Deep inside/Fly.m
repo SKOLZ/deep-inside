@@ -16,10 +16,12 @@
 @implementation Fly
 
 +(instancetype)initWithPos: (CGPoint) pos {
-    return [super monsterWithPosition: pos andTexture: FLY1];
+    Fly* f = [super monsterWithPosition: pos andTexture: FLY1];
+    f.scale = 0.8;
+    return f;
 }
 
--(void)fly {
+-(void)animate {
     SKAction* fly = [SKAction repeatActionForever:[SKAction animateWithTextures:@[FLY1, FLY2, FLY3, FLY4, FLY5, FLY6, FLY7, FLY8, FLY9, FLY10] timePerFrame: 0.1]];
     [self runAction: fly];
 }

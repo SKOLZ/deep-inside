@@ -57,7 +57,15 @@
 #define FLY9 [SKTexture textureWithImageNamed:@"fly9"]
 #define FLY10 [SKTexture textureWithImageNamed:@"fly10"]
 
+// ITEMS
 
+#define HEART1 [SKTexture textureWithImageNamed:@"heart1"]
+#define HEART2 [SKTexture textureWithImageNamed:@"heart2"]
+#define HEART3 [SKTexture textureWithImageNamed:@"heart3"]
+#define HEART4 [SKTexture textureWithImageNamed:@"heart4"]
+#define HEART5 [SKTexture textureWithImageNamed:@"heart5"]
+#define HEART6 [SKTexture textureWithImageNamed:@"heart6"]
+#define HEART7 [SKTexture textureWithImageNamed:@"heart7"]
 
 // GAME AMBIENCE
 

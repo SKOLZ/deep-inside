@@ -11,15 +11,18 @@
 #import "categories.h"
 #import "MassRelation.h"
 
+#define HEIGHT_REDUCTION 0.8
+
 @implementation Player
 +(instancetype)playerWithPosition: (CGPoint) pos {
     Player* p = [[Player alloc] initWithTexture: PLAYER_WALK1];
     p.position = pos;
-    p.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(p.frame.size.width/2, p.frame.size.height)];
+    p.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(p.frame.size.width/4, p.frame.size.height * HEIGHT_REDUCTION)];
     p.physicsBody.dynamic = YES;
     p.physicsBody.allowsRotation = NO;
     p.physicsBody.categoryBitMask = playerCategory;
     p.physicsBody.contactTestBitMask = floorCategory;
+    p.physicsBody.collisionBitMask = 0xFFFFFFFF;
     p.physicsBody.mass = PLAYER_MASS;
     return p;
 }
@@ -52,7 +55,7 @@
     self.physicsBody.collisionBitMask = floorCategory; // only collide with floor.
     [self runAction:smoke completion:^{
         self.physicsBody.dynamic = YES;
-        self.physicsBody.collisionBitMask = 0xFFFFFFFF; // return to collide with everyone
+        self.physicsBody.collisionBitMask = 0xFFFFFFF; // return to collide with everyone
         [self setTexture: NULL];
         [self removeAllActions];
         [self performSelector:@selector(appear) withObject:nil afterDelay: 1.0];
