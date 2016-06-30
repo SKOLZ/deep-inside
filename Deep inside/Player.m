@@ -11,11 +11,13 @@
 #import "categories.h"
 #import "MassRelation.h"
 
+#define HEIGHT_REDUCTION 0.8
+
 @implementation Player
 +(instancetype)playerWithPosition: (CGPoint) pos {
     Player* p = [[Player alloc] initWithTexture: PLAYER_WALK1];
     p.position = pos;
-    p.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(p.frame.size.width/2, p.frame.size.height)];
+    p.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(p.frame.size.width/4, p.frame.size.height * HEIGHT_REDUCTION)];
     p.physicsBody.dynamic = YES;
     p.physicsBody.allowsRotation = NO;
     p.physicsBody.categoryBitMask = playerCategory;

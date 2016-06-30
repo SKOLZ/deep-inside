@@ -16,7 +16,9 @@
 @implementation Fly
 
 +(instancetype)initWithPos: (CGPoint) pos {
-    return [super monsterWithPosition: pos andTexture: FLY1];
+    Fly* f = [super monsterWithPosition: pos andTexture: FLY1];
+    f.scale = 0.8;
+    return f;
 }
 
 -(void)fly {
