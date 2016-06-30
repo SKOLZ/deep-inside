@@ -10,6 +10,7 @@
 #import "MenuScene.h"
 #import "Player.h"
 #import "Monster.h"
+#import "Fly.h"
 #import "Zombie.h"
 #import "textures.h"
 #import "categories.h"
@@ -235,11 +236,18 @@
     // ***** Ok to spawn, keep going
 
     // Create sprite
+    
+    Monster* monster;
+    if (arc4random() % 3 >= 2) {
+        monster = [Fly initWithPos:CGPointMake(SCREEN_WIDTH * 1.1, PLAYER_INITIAL_Y * 3.5)];
+        [((Fly*) monster) fly];
+    } else {
+        monster = [Zombie initWithPos:CGPointMake(SCREEN_WIDTH * 1.1, PLAYER_INITIAL_Y)];
+        [((Zombie*) monster) walk];
+    }
 
-    Zombie* monster = [Zombie initWithPos:CGPointMake(SCREEN_WIDTH * 1.1, PLAYER_INITIAL_Y)];
 
     // Create the monster slightly off-screen along the right edge,
-    [monster walk];
     [self addChild:monster];
 
     // Determine speed of the monster
@@ -248,7 +256,7 @@
     int actualDuration = (arc4random() % rangeDuration) + MIN_DURATION;
 
     // Create the actions
-    SKAction * actionMove = [SKAction moveTo:CGPointMake(-monster.size.width/2, PLAYER_INITIAL_Y) duration:actualDuration];
+    SKAction * actionMove = [SKAction moveTo:CGPointMake(-monster.size.width/2, monster.position.y) duration:actualDuration];
     SKAction * actionMoveDone = [SKAction removeFromParent];
     [monster runAction:[SKAction sequence:@[actionMove, actionMoveDone]]];
 }

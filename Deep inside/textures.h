@@ -46,6 +46,19 @@
 #define ZOMBIE4 [SKTexture textureWithImageNamed:@"zombie4"]
 #define ZOMBIE5 [SKTexture textureWithImageNamed:@"zombie5"]
 
+#define FLY1 [SKTexture textureWithImageNamed:@"fly1"]
+#define FLY2 [SKTexture textureWithImageNamed:@"fly2"]
+#define FLY3 [SKTexture textureWithImageNamed:@"fly3"]
+#define FLY4 [SKTexture textureWithImageNamed:@"fly4"]
+#define FLY5 [SKTexture textureWithImageNamed:@"fly5"]
+#define FLY6 [SKTexture textureWithImageNamed:@"fly6"]
+#define FLY7 [SKTexture textureWithImageNamed:@"fly7"]
+#define FLY8 [SKTexture textureWithImageNamed:@"fly8"]
+#define FLY9 [SKTexture textureWithImageNamed:@"fly9"]
+#define FLY10 [SKTexture textureWithImageNamed:@"fly10"]
+
+
+
 // GAME AMBIENCE
 
 #define GRASS_PLATFORM [SKTexture textureWithImageNamed:@"grass_platform.png"]

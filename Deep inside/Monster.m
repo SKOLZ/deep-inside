@@ -24,9 +24,9 @@
                         ];
         m.physicsBody.dynamic = NO;
         m.physicsBody.allowsRotation = NO;
+        m.physicsBody.affectedByGravity = NO;
         m.physicsBody.categoryBitMask = monsterCategory;
         m.physicsBody.contactTestBitMask = playerCategory | floorCategory;
-        m.physicsBody.mass = MONSTER_MASS;
         return m;
     }
 @end
