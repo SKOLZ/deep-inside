@@ -98,13 +98,14 @@
     skView.showsNodeCount = YES;
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     skView.ignoresSiblingOrder = YES;
+    skView.showsPhysics = YES;
     
     // Create and configure the scene.
     GameScene *scene = [GameScene nodeWithFileNamed:@"GameScene"];
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    
+    SKTransition *fadeOut = [SKTransition fadeWithDuration:0.5];
     // Present the scene.
-    [skView presentScene:scene];
+    [skView presentScene:scene transition:fadeOut];
 }
 
 -(void)quit {

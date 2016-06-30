@@ -30,7 +30,6 @@
 @interface GameScene () <SKPhysicsContactDelegate> {
     Player* _player;
     SKColor* _skyColor;
-    SKAction* _moveGroundSpritesForever;
     int _floaters_cooldown;
     int _zombies_cooldown;
     SKLabelNode* heartLabel;
@@ -38,6 +37,7 @@
     NSInteger currentSoundsIndex;
     AVPlayer *mediaPlayer;
     NSMutableArray<AVPlayerItem *> *soundList;
+    BOOL lost;
 }
 @end
 
@@ -89,14 +89,19 @@
 
     SKAction* moveSkylineSprite = [SKAction moveByX:-BACKGROUND_TEXTURE.size.width y:0 duration:0.02 * BACKGROUND_TEXTURE.size.width];
     SKAction* resetSkylineSprite = [SKAction moveByX:(BACKGROUND_TEXTURE.size.width - 5) y:0 duration:0];
-    SKAction* moveSkylineSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveSkylineSprite, resetSkylineSprite]]];
+    SKAction* stop_condition = [SKAction runBlock:^{
+        if(lost) {
+            [SKAction stop];
+        };
+    }];
+    SKAction* _moveSkylineSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[stop_condition, moveSkylineSprite, resetSkylineSprite]]];
 
     for( int i = 0; i < 2 + self.frame.size.width / ( BACKGROUND_TEXTURE.size.width ); i++ ) {
         SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:BACKGROUND_TEXTURE];
         [sprite setScale:0.8];
         sprite.zPosition = -20;
         sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 2);
-        [sprite runAction:moveSkylineSpritesForever];
+        [sprite runAction: _moveSkylineSpritesForever];
         [self addChild:sprite];
     }
 
@@ -104,12 +109,12 @@
 
     SKAction* moveGroundSprite = [SKAction moveByX:-GROUND_TEXTURE.size.width y:0 duration:0.003 * GROUND_TEXTURE.size.width];
     SKAction* resetGroundSprite = [SKAction moveByX:GROUND_TEXTURE.size.width y:0 duration:0];
-    _moveGroundSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveGroundSprite, resetGroundSprite]]];
+    SKAction* moveGroundSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[stop_condition, moveGroundSprite, resetGroundSprite]]];
 
     for( int i = 0; i < 2 + self.frame.size.width / ( GROUND_TEXTURE.size.width ); i++ ) {
         SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:GROUND_TEXTURE];
         sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height);
-        [sprite runAction:_moveGroundSpritesForever];
+        [sprite runAction:moveGroundSpritesForever];
         [self addChild:sprite];
     }
 
@@ -167,19 +172,10 @@
 -(void)goToMenu {
     MenuScene *menuScene = [MenuScene nodeWithFileNamed:@"MenuScene"];
     menuScene.scaleMode = SKSceneScaleModeAspectFill;
-    SKTransition *transition = [SKTransition flipVerticalWithDuration:0.5];
-    [self.view presentScene:menuScene transition:transition];
-}
-
--(void)goToFinishGame:(BOOL)won {
-    if (!won) {
-//        GameOverScene *gameOverScene = [GameOverScene nodeWithFileNamed:@"GameOverScene"];
-//        gameOverScene.scaleMode = SKSceneScaleModeAspectFill;
-//        SKTransition *transition = [SKTransition flipVerticalWithDuration:0.5];
-//        [self.view presentScene:gameOverScene transition:transition];
-        [self goToMenu];
-    }
-
+    SKTransition *fadeOut = [SKTransition fadeWithDuration:2];
+    self.view.ignoresSiblingOrder = YES;
+    [mediaPlayer pause];
+    [self.view presentScene:menuScene transition:fadeOut];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -209,15 +205,16 @@
 
     int random_width = (2 + arc4random_uniform(3)) * 100;
     SKSpriteNode* random_block = [SKSpriteNode spriteNodeWithTexture:GRASS_PLATFORM size:CGSizeMake(random_width, 50)];
-    random_block.position = CGPointMake(SCREEN_WIDTH * 1.1, PLAYER_INITIAL_Y * 2.5);
+    random_block.position = CGPointMake(SCREEN_WIDTH + GRASS_PLATFORM.size.width, PLAYER_INITIAL_Y * 2.5);
     random_block.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(random_width * 0.84, 20)];
     random_block.physicsBody.affectedByGravity = NO;
     random_block.physicsBody.dynamic = NO;
     random_block.physicsBody.categoryBitMask = floorCategory;
     random_block.physicsBody.contactTestBitMask = playerCategory;
-    [random_block runAction:_moveGroundSpritesForever];
+    SKAction* moveRandomBlock = [SKAction moveByX:-SCREEN_WIDTH-GRASS_PLATFORM.size.width y:0 duration:0.005 * GRASS_PLATFORM.size.width];
+    [random_block runAction:moveRandomBlock]; // hacer lo mismo que con monsters, acelerando a medida que pasa el tiempo;
     [self addChild:random_block];
-    [self performSelector: @selector(killFloatGround:) withObject: random_block afterDelay: 4];
+    [self performSelector: @selector(killFloatGround:) withObject: random_block afterDelay: 0.005 * GRASS_PLATFORM.size.width];
 }
 
 -(void)killFloatGround:(SKSpriteNode*) floatingGround {
@@ -242,8 +239,8 @@
     [self addChild:monster];
 
     // Determine speed of the monster
-    int minDuration = 2.0;
-    int maxDuration = 4.0;
+    int minDuration = 3.0;
+    int maxDuration = 5.0;
     int rangeDuration = maxDuration - minDuration;
     int actualDuration = (arc4random() % rangeDuration) + minDuration;
 
@@ -286,14 +283,15 @@
 
     // Player hits floor
     if ((firstBody.categoryBitMask & playerCategory) != 0 && (secondBody.categoryBitMask & floorCategory) != 0) {
-        if (_player.state != PLAYER_DISAPPEARED) {
+        if (_player.state != PLAYER_DISAPPEARED && _player.state != PLAYER_DEAD) {
             [_player run];
         }
     }
     // Player hits monster
     if ((firstBody.categoryBitMask & playerCategory) != 0 && (secondBody.categoryBitMask & monsterCategory) != 0) {
         if (_player.state != PLAYER_DISAPPEARED) {
-            [self goToFinishGame:NO];
+            [_player die];
+            [self performSelector:@selector(goToMenu) withObject:nil afterDelay:1.5];
         }
     }
 
