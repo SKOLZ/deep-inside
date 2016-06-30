@@ -95,19 +95,13 @@
     // Create background
 
     SKAction* moveSkylineSprite = [SKAction moveByX:-BACKGROUND_TEXTURE.size.width y:0 duration:0.02 * BACKGROUND_TEXTURE.size.width];
-    SKAction* resetSkylineSprite = [SKAction moveByX:(BACKGROUND_TEXTURE.size.width - 5) y:0 duration:0];
-    SKAction* stop_condition = [SKAction runBlock:^{
-        if(lost) {
-            [SKAction stop];
-        };
-    }];
-    SKAction* _moveSkylineSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[stop_condition, moveSkylineSprite, resetSkylineSprite]]];
+    SKAction* resetSkylineSprite = [SKAction moveByX:BACKGROUND_TEXTURE.size.width y:0 duration:0];
+    SKAction* _moveSkylineSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveSkylineSprite,resetSkylineSprite]]];
 
     for( int i = 0; i < 2 + self.frame.size.width / ( BACKGROUND_TEXTURE.size.width ); i++ ) {
-        SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:BACKGROUND_TEXTURE];
-        [sprite setScale:0.8];
+        SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:BACKGROUND_TEXTURE size: self.frame.size];
         sprite.zPosition = -20;
-        sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 2);
+        sprite.position = CGPointMake(sprite.size.width/2 + i * sprite.size.width, sprite.size.height / 2);
         [sprite runAction: _moveSkylineSpritesForever];
         [self addChild:sprite];
     }
@@ -116,7 +110,7 @@
 
     SKAction* moveGroundSprite = [SKAction moveByX:-GROUND_TEXTURE.size.width y:0 duration:0.003 * GROUND_TEXTURE.size.width];
     SKAction* resetGroundSprite = [SKAction moveByX:GROUND_TEXTURE.size.width y:0 duration:0];
-    SKAction* moveGroundSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[stop_condition, moveGroundSprite, resetGroundSprite]]];
+    SKAction* moveGroundSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveGroundSprite, resetGroundSprite]]];
 
     for( int i = 0; i < 2 + self.frame.size.width / ( GROUND_TEXTURE.size.width ); i++ ) {
         SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:GROUND_TEXTURE];
