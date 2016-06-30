@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B054233A1D24B878000509EF /* Fly.m in Sources */ = {isa = PBXBuildFile; fileRef = B05423391D24B878000509EF /* Fly.m */; };
 		DF26E58F1CEA8190009EE213 /* smoke7 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E5881CEA8190009EE213 /* smoke7 */; };
 		DF26E5901CEA8190009EE213 /* smoke6 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E5891CEA8190009EE213 /* smoke6 */; };
 		DF26E5911CEA8190009EE213 /* smoke5 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E58A1CEA8190009EE213 /* smoke5 */; };
@@ -99,6 +100,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B05423381D24B878000509EF /* Fly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fly.h; sourceTree = "<group>"; };
+		B05423391D24B878000509EF /* Fly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fly.m; sourceTree = "<group>"; };
 		DF26E5881CEA8190009EE213 /* smoke7 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke7; sourceTree = "<group>"; };
 		DF26E5891CEA8190009EE213 /* smoke6 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke6; sourceTree = "<group>"; };
 		DF26E58A1CEA8190009EE213 /* smoke5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke5; sourceTree = "<group>"; };
@@ -256,6 +259,8 @@
 				DFDFFE1A1D22A054002E5598 /* Monster.h */,
 				DFDFFE1B1D232F5F002E5598 /* Zombie.h */,
 				DFDFFE1D1D233168002E5598 /* Zombie.m */,
+				B05423381D24B878000509EF /* Fly.h */,
+				B05423391D24B878000509EF /* Fly.m */,
 				DFDFFE291D236DCC002E5598 /* Music.h */,
 			);
 			path = "Deep inside";
@@ -503,6 +508,7 @@
 				DF6705F71CE3BEA6003AF6F2 /* GameViewController.m in Sources */,
 				DFDFFE1E1D233168002E5598 /* Zombie.m in Sources */,
 				DF6705EF1CE3BEA6003AF6F2 /* AppDelegate.m in Sources */,
+				B054233A1D24B878000509EF /* Fly.m in Sources */,
 				DF6705F21CE3BEA6003AF6F2 /* GameScene.m in Sources */,
 				DFDFFDFE1D21F182002E5598 /* MenuScene.m in Sources */,
 				DFDFFE191D22A031002E5598 /* Monster.m in Sources */,
