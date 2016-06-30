@@ -26,6 +26,16 @@
 		DF33C12B1D23B1410085F353 /* player_dying3 in Resources */ = {isa = PBXBuildFile; fileRef = DF33C1251D23B1410085F353 /* player_dying3 */; };
 		DF33C12C1D23B1410085F353 /* player_dying2 in Resources */ = {isa = PBXBuildFile; fileRef = DF33C1261D23B1410085F353 /* player_dying2 */; };
 		DF33C12D1D23B1410085F353 /* player_dying1 in Resources */ = {isa = PBXBuildFile; fileRef = DF33C1271D23B1410085F353 /* player_dying1 */; };
+		DF33C1421D24B8C10085F353 /* fly1 in Resources */ = {isa = PBXBuildFile; fileRef = DF33C1381D24B8C10085F353 /* fly1 */; };
+		DF33C1431D24B8C10085F353 /* fly2 in Resources */ = {isa = PBXBuildFile; fileRef = DF33C1391D24B8C10085F353 /* fly2 */; };
+		DF33C1441D24B8C10085F353 /* fly3 in Resources */ = {isa = PBXBuildFile; fileRef = DF33C13A1D24B8C10085F353 /* fly3 */; };
+		DF33C1451D24B8C10085F353 /* fly4 in Resources */ = {isa = PBXBuildFile; fileRef = DF33C13B1D24B8C10085F353 /* fly4 */; };
+		DF33C1461D24B8C10085F353 /* fly5 in Resources */ = {isa = PBXBuildFile; fileRef = DF33C13C1D24B8C10085F353 /* fly5 */; };
+		DF33C1471D24B8C10085F353 /* fly6 in Resources */ = {isa = PBXBuildFile; fileRef = DF33C13D1D24B8C10085F353 /* fly6 */; };
+		DF33C1481D24B8C10085F353 /* fly7 in Resources */ = {isa = PBXBuildFile; fileRef = DF33C13E1D24B8C10085F353 /* fly7 */; };
+		DF33C1491D24B8C10085F353 /* fly8 in Resources */ = {isa = PBXBuildFile; fileRef = DF33C13F1D24B8C10085F353 /* fly8 */; };
+		DF33C14A1D24B8C10085F353 /* fly9 in Resources */ = {isa = PBXBuildFile; fileRef = DF33C1401D24B8C10085F353 /* fly9 */; };
+		DF33C14B1D24B8C10085F353 /* fly10 in Resources */ = {isa = PBXBuildFile; fileRef = DF33C1411D24B8C10085F353 /* fly10 */; };
 		DF6705EC1CE3BEA6003AF6F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6705EB1CE3BEA6003AF6F2 /* main.m */; };
 		DF6705EF1CE3BEA6003AF6F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6705EE1CE3BEA6003AF6F2 /* AppDelegate.m */; };
 		DF6705F21CE3BEA6003AF6F2 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6705F11CE3BEA6003AF6F2 /* GameScene.m */; };
@@ -108,16 +118,16 @@
 		DF33C1251D23B1410085F353 /* player_dying3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_dying3; sourceTree = "<group>"; };
 		DF33C1261D23B1410085F353 /* player_dying2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_dying2; sourceTree = "<group>"; };
 		DF33C1271D23B1410085F353 /* player_dying1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_dying1; sourceTree = "<group>"; };
-		DF33C12E1D24B0460085F353 /* fly1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly1; sourceTree = "<group>"; };
-		DF33C12F1D24B0460085F353 /* fly2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly2; sourceTree = "<group>"; };
-		DF33C1301D24B0460085F353 /* fly3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly3; sourceTree = "<group>"; };
-		DF33C1311D24B0460085F353 /* fly4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly4; sourceTree = "<group>"; };
-		DF33C1321D24B0460085F353 /* fly5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly5; sourceTree = "<group>"; };
-		DF33C1331D24B0460085F353 /* fly6 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly6; sourceTree = "<group>"; };
-		DF33C1341D24B0460085F353 /* fly7 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly7; sourceTree = "<group>"; };
-		DF33C1351D24B0460085F353 /* fly8 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly8; sourceTree = "<group>"; };
-		DF33C1361D24B0460085F353 /* fly9 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly9; sourceTree = "<group>"; };
-		DF33C1371D24B0460085F353 /* fly10 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly10; sourceTree = "<group>"; };
+		DF33C1381D24B8C10085F353 /* fly1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly1; sourceTree = "<group>"; };
+		DF33C1391D24B8C10085F353 /* fly2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly2; sourceTree = "<group>"; };
+		DF33C13A1D24B8C10085F353 /* fly3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly3; sourceTree = "<group>"; };
+		DF33C13B1D24B8C10085F353 /* fly4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly4; sourceTree = "<group>"; };
+		DF33C13C1D24B8C10085F353 /* fly5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly5; sourceTree = "<group>"; };
+		DF33C13D1D24B8C10085F353 /* fly6 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly6; sourceTree = "<group>"; };
+		DF33C13E1D24B8C10085F353 /* fly7 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly7; sourceTree = "<group>"; };
+		DF33C13F1D24B8C10085F353 /* fly8 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly8; sourceTree = "<group>"; };
+		DF33C1401D24B8C10085F353 /* fly9 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly9; sourceTree = "<group>"; };
+		DF33C1411D24B8C10085F353 /* fly10 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly10; sourceTree = "<group>"; };
 		DF6705E71CE3BEA6003AF6F2 /* Deep inside.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Deep inside.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF6705EB1CE3BEA6003AF6F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DF6705ED1CE3BEA6003AF6F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -281,16 +291,16 @@
 				DFDFFE741D238CF6002E5598 /* menu_bg6 */,
 				DFDFFE751D238CF6002E5598 /* menu_bg5 */,
 				DFDFFE761D238CF6002E5598 /* menu_bg4 */,
-				DF33C12E1D24B0460085F353 /* fly1 */,
-				DF33C12F1D24B0460085F353 /* fly2 */,
-				DF33C1301D24B0460085F353 /* fly3 */,
-				DF33C1311D24B0460085F353 /* fly4 */,
-				DF33C1321D24B0460085F353 /* fly5 */,
-				DF33C1331D24B0460085F353 /* fly6 */,
-				DF33C1341D24B0460085F353 /* fly7 */,
-				DF33C1351D24B0460085F353 /* fly8 */,
-				DF33C1361D24B0460085F353 /* fly9 */,
-				DF33C1371D24B0460085F353 /* fly10 */,
+				DF33C1381D24B8C10085F353 /* fly1 */,
+				DF33C1391D24B8C10085F353 /* fly2 */,
+				DF33C13A1D24B8C10085F353 /* fly3 */,
+				DF33C13B1D24B8C10085F353 /* fly4 */,
+				DF33C13C1D24B8C10085F353 /* fly5 */,
+				DF33C13D1D24B8C10085F353 /* fly6 */,
+				DF33C13E1D24B8C10085F353 /* fly7 */,
+				DF33C13F1D24B8C10085F353 /* fly8 */,
+				DF33C1401D24B8C10085F353 /* fly9 */,
+				DF33C1411D24B8C10085F353 /* fly10 */,
 				DFDFFE771D238CF6002E5598 /* menu_bg3 */,
 				DFDFFE781D238CF6002E5598 /* menu_bg2 */,
 				DFDFFE791D238CF6002E5598 /* menu_bg1 */,
@@ -416,13 +426,18 @@
 				DF26E59F1CEAA4C4009EE213 /* player_jump1 in Resources */,
 				DFDFFE801D238CF6002E5598 /* menu_bg10 in Resources */,
 				DFDFFE861D238CF6002E5598 /* menu_bg4 in Resources */,
+				DF33C1471D24B8C10085F353 /* fly6 in Resources */,
 				DFDFFE931D239AC5002E5598 /* zombie5 in Resources */,
 				DFCC7E7D1CE53D500053998C /* game_ground in Resources */,
 				DFDFFDF21D21E46E002E5598 /* heart1 in Resources */,
 				DFDFFE0D1D221B91002E5598 /* heart_icon in Resources */,
 				DF33C12D1D23B1410085F353 /* player_dying1 in Resources */,
 				DF6857FC1CE3DB05003E13CD /* player_walk4 in Resources */,
+				DF33C14A1D24B8C10085F353 /* fly9 in Resources */,
 				DFDFFE891D238CF6002E5598 /* menu_bg1 in Resources */,
+				DF33C1451D24B8C10085F353 /* fly4 in Resources */,
+				DF33C14B1D24B8C10085F353 /* fly10 in Resources */,
+				DF33C1421D24B8C10085F353 /* fly1 in Resources */,
 				DF26E5A01CEAA4C4009EE213 /* player_jump2 in Resources */,
 				DF26E5901CEA8190009EE213 /* smoke6 in Resources */,
 				DFDFFE871D238CF6002E5598 /* menu_bg3 in Resources */,
@@ -430,6 +445,7 @@
 				DFDFFE841D238CF6002E5598 /* menu_bg6 in Resources */,
 				DFDFFE8B1D239100002E5598 /* deep_inside_menu.mp3 in Resources */,
 				DF6857FA1CE3DB05003E13CD /* player_walk2 in Resources */,
+				DF33C1491D24B8C10085F353 /* fly8 in Resources */,
 				DFDFFE7D1D238CF6002E5598 /* menu_bg13 in Resources */,
 				DF76784C1D1A2762001315E1 /* grass_platform.png in Resources */,
 				DF26E5941CEA8190009EE213 /* smoke2 in Resources */,
@@ -440,6 +456,7 @@
 				DF26E58F1CEA8190009EE213 /* smoke7 in Resources */,
 				DF6705FF1CE3BEA6003AF6F2 /* LaunchScreen.storyboard in Resources */,
 				DFDFFDFC1D21F121002E5598 /* MenuScene.sks in Resources */,
+				DF33C1431D24B8C10085F353 /* fly2 in Resources */,
 				DF6857F91CE3DB05003E13CD /* player_walk1 in Resources */,
 				DF6705FC1CE3BEA6003AF6F2 /* Assets.xcassets in Resources */,
 				DF33C12C1D23B1410085F353 /* player_dying2 in Resources */,
@@ -447,6 +464,7 @@
 				DF6705FA1CE3BEA6003AF6F2 /* Main.storyboard in Resources */,
 				DFDFFE941D239AC5002E5598 /* zombie4 in Resources */,
 				DFDFFE241D234429002E5598 /* The Ink Spots - Into Each Life Some Rain Must Fall.mp3 in Resources */,
+				DF33C1441D24B8C10085F353 /* fly3 in Resources */,
 				DF26E5A21CEAA4C4009EE213 /* player_jump4 in Resources */,
 				DFDFFDF81D21E46E002E5598 /* heart7 in Resources */,
 				DFDFFE091D220569002E5598 /* deep_inside_logo in Resources */,
@@ -459,12 +477,14 @@
 				DFDFFE221D234429002E5598 /* The Ink Spots - Maybe.mp3 in Resources */,
 				DF26E5A31CEAA4C4009EE213 /* player_jump5 in Resources */,
 				DF33C1291D23B1410085F353 /* player_dying5 in Resources */,
+				DF33C1461D24B8C10085F353 /* fly5 in Resources */,
 				DF33C12B1D23B1410085F353 /* player_dying3 in Resources */,
 				DF6857FB1CE3DB05003E13CD /* player_walk3 in Resources */,
 				DFDFFE821D238CF6002E5598 /* menu_bg8 in Resources */,
 				DF33C1281D23B1410085F353 /* player_dying6 in Resources */,
 				DFDFFE051D2204F1002E5598 /* quit_button in Resources */,
 				DFDFFE231D234429002E5598 /* The Ink Spots - It's All Over But The Crying.mp3 in Resources */,
+				DF33C1481D24B8C10085F353 /* fly7 in Resources */,
 				DF26E5921CEA8190009EE213 /* smoke4 in Resources */,
 				DFDFFE811D238CF6002E5598 /* menu_bg9 in Resources */,
 				DFDFFE8D1D2397C3002E5598 /* game_background in Resources */,
