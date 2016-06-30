@@ -10,6 +10,4 @@
 
 @interface GameScene : SKScene
 
--(void)killFloatGround:(SKSpriteNode*) floatingGround;
-
 @end

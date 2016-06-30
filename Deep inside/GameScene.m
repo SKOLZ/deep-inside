@@ -25,6 +25,8 @@
 #define CYCLES_WAIT_RANGE_ZOMBIE 100
 #define CYCLES_MIN_WAIT_ZOMBIE 30
 #define MUSIC_TRACK_SIZE 5
+#define MIN_DURATION 3
+#define INITIAL_DURATION 6
 
 
 @interface GameScene () <SKPhysicsContactDelegate> {
@@ -38,6 +40,8 @@
     AVPlayer *mediaPlayer;
     NSMutableArray<AVPlayerItem *> *soundList;
     BOOL lost;
+    int _difficulty;
+    int _score;
 }
 @end
 
@@ -80,6 +84,8 @@
     hearts = 0;
     _floaters_cooldown = -1; // 2 seconds
     _zombies_cooldown = -1;
+    _difficulty = 1;
+    _score = 0;
     // Create background color
 
     _skyColor = [SKColor colorWithRed:0 green:0 blue:0 alpha:1.0];
@@ -211,14 +217,12 @@
     random_block.physicsBody.dynamic = NO;
     random_block.physicsBody.categoryBitMask = floorCategory;
     random_block.physicsBody.contactTestBitMask = playerCategory;
-    SKAction* moveRandomBlock = [SKAction moveByX:-SCREEN_WIDTH-GRASS_PLATFORM.size.width y:0 duration:0.005 * GRASS_PLATFORM.size.width];
-    [random_block runAction:moveRandomBlock]; // hacer lo mismo que con monsters, acelerando a medida que pasa el tiempo;
+    
+    int actualDuration = MAX(MIN_DURATION, INITIAL_DURATION - 0.2 * _difficulty);
+    SKAction* moveRandomBlock = [SKAction moveToX:-GRASS_PLATFORM.size.width duration: actualDuration];
+    SKAction* removeBlock = [SKAction removeFromParent];
+    [random_block runAction:[SKAction sequence:@[moveRandomBlock, removeBlock]]];
     [self addChild:random_block];
-    [self performSelector: @selector(killFloatGround:) withObject: random_block afterDelay: 0.005 * GRASS_PLATFORM.size.width];
-}
-
--(void)killFloatGround:(SKSpriteNode*) floatingGround {
-    [self removeChildrenInArray:[NSArray arrayWithObject:floatingGround]];
 }
 
 -(void)spawnMonster {
@@ -239,10 +243,9 @@
     [self addChild:monster];
 
     // Determine speed of the monster
-    int minDuration = 3.0;
-    int maxDuration = 5.0;
-    int rangeDuration = maxDuration - minDuration;
-    int actualDuration = (arc4random() % rangeDuration) + minDuration;
+    int maxDuration = MAX(MIN_DURATION + 1, INITIAL_DURATION - 0.2 * _difficulty);
+    int rangeDuration = maxDuration - MIN_DURATION;
+    int actualDuration = (arc4random() % rangeDuration) + MIN_DURATION;
 
     // Create the actions
     SKAction * actionMove = [SKAction moveTo:CGPointMake(-monster.size.width/2, PLAYER_INITIAL_Y) duration:actualDuration];
@@ -251,9 +254,18 @@
 }
 
 -(void)update:(NSTimeInterval)currentTime {
+    [self setGameScore];
     [self spawnFloatGround];
     [self spawnMonster];
     [self applyCountdowns];
+}
+
+-(void)setGameScore {
+    _score += 1;
+    if (_score > 200 * _difficulty) {
+        _difficulty += 1;
+    }
+    NSLog(@"difficulty: %i, score: %i", _difficulty, _score);
 }
 
 -(void)applyCountdowns {
