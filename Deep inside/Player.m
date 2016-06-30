@@ -11,7 +11,7 @@
 #import "categories.h"
 #import "MassRelation.h"
 
-#define HEIGHT_REDUCTION 0.8
+#define HEIGHT_REDUCTION 1
 
 @implementation Player
 +(instancetype)playerWithPosition: (CGPoint) pos {
