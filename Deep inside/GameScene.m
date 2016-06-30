@@ -102,14 +102,14 @@
 
     // Create background
 
-    SKAction* moveSkylineSprite = [SKAction moveByX:-BACKGROUND_TEXTURE.size.width y:0 duration:0.02 * BACKGROUND_TEXTURE.size.width];
-    SKAction* resetSkylineSprite = [SKAction moveByX:BACKGROUND_TEXTURE.size.width y:0 duration:0];
-    SKAction* _moveSkylineSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveSkylineSprite,resetSkylineSprite]]];
+    SKAction* moveSkylineSprite = [SKAction moveByX:-BACKGROUND_TEXTURE.size.width/2 y:0 duration:0.02 * BACKGROUND_TEXTURE.size.width];
+    SKAction* resetSkylineSprite = [SKAction moveByX:BACKGROUND_TEXTURE.size.width/2 y:0 duration:0];
+    SKAction* _moveSkylineSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveSkylineSprite, resetSkylineSprite]]];
 
     for( int i = 0; i < 2 + self.frame.size.width / ( BACKGROUND_TEXTURE.size.width ); i++ ) {
         SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:BACKGROUND_TEXTURE size: self.frame.size];
         sprite.zPosition = -20;
-        sprite.position = CGPointMake(sprite.size.width/2 + i * sprite.size.width, sprite.size.height / 2);
+        sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 2);
         [sprite runAction: _moveSkylineSpritesForever];
         [self addChild:sprite];
     }
@@ -164,7 +164,7 @@
     SKSpriteNode *heartLabelWrapper = [[SKSpriteNode alloc] init];//parent
     heartLabelWrapper.zPosition = 1.0;
 
-    heartLabel = [SKLabelNode labelNodeWithFontNamed:@"Verdana-Bold"];
+    heartLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
     [self updateHeartLabel];
     heartLabel.fontSize = 36;
     heartLabel.fontColor = [SKColor whiteColor];
@@ -276,7 +276,7 @@
     if (_score > 200 * _difficulty) {
         _difficulty += 1;
     }
-    NSLog(@"difficulty: %i, score: %i", _difficulty, _score);
+//    NSLog(@"difficulty: %i, score: %i", _difficulty, _score);
 }
 
 -(void)applyCountdowns {
