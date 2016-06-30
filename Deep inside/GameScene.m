@@ -11,6 +11,7 @@
 #import "Player.h"
 #import "Monster.h"
 #import "Fly.h"
+#import "Heart.h"
 #import "Zombie.h"
 #import "textures.h"
 #import "categories.h"
@@ -23,8 +24,11 @@
 #define FIXED_PLAYER_POS_X self.frame.size.width / 4
 #define CYCLES_WAIT_RANGE 200
 #define CYCLES_MIN_WAIT 50
+#define CYCLES_WAIT_RANGE_HEART 200
+#define CYCLES_MIN_WAIT_HEART 100
 #define CYCLES_WAIT_RANGE_ZOMBIE 100
 #define CYCLES_MIN_WAIT_ZOMBIE 30
+#define DISSAPPEAR_COOLDOWN 100
 #define MUSIC_TRACK_SIZE 5
 #define MIN_DURATION 3
 #define INITIAL_DURATION 6
@@ -34,9 +38,11 @@
     Player* _player;
     SKColor* _skyColor;
     int _floaters_cooldown;
-    int _zombies_cooldown;
+    int _monsters_cooldown;
+    int _hearts_cooldown;
+    int _dissappear_cooldown;
     SKLabelNode* heartLabel;
-    int hearts;
+    int _hearts;
     NSInteger currentSoundsIndex;
     AVPlayer *mediaPlayer;
     NSMutableArray<AVPlayerItem *> *soundList;
@@ -82,9 +88,11 @@
     [self playNextAudio];
 
     self.physicsWorld.contactDelegate = self;
-    hearts = 0;
+    _hearts = 0;
     _floaters_cooldown = -1; // 2 seconds
-    _zombies_cooldown = -1;
+    _monsters_cooldown = -1;
+    _hearts_cooldown = arc4random() % CYCLES_WAIT_RANGE_HEART + CYCLES_MIN_WAIT_HEART;
+    _dissappear_cooldown = -1;
     _difficulty = 1;
     _score = 0;
     // Create background color
@@ -163,7 +171,7 @@
     heartLabelWrapper.zPosition = 1.0;
 
     heartLabel = [SKLabelNode labelNodeWithFontNamed:@"Verdana-Bold"];
-    heartLabel.text = [NSString stringWithFormat:@"%d", hearts];
+    [self updateHeartLabel];
     heartLabel.fontSize = 36;
     heartLabel.fontColor = [SKColor whiteColor];
     heartLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
@@ -174,6 +182,10 @@
     heartLabelWrapper.position = CGPointMake(heartIcon.size.width/2 + 70, self.frame.size.height - 2 * heartIcon.size.height - 35);
 
     [self addChild:heartLabelWrapper];
+}
+
+-(void)updateHeartLabel {
+    heartLabel.text = [NSString stringWithFormat:@"%d", _hearts];
 }
 
 -(void)goToMenu {
@@ -193,23 +205,20 @@
     if ([node.name isEqualToString:@"exit"]) {
         [self goToMenu];
     } else {
-        if (point.x < SCREEN_HALF_WIDTH && _player.state == PLAYER_RUNNING) {
-            [_player jump];
-        } else if (point.x > SCREEN_HALF_WIDTH && _player.state != PLAYER_DISAPPEARED) {
-            [_player disappear];
+        if (_player.state != PLAYER_DEAD) {
+            if (point.x < SCREEN_HALF_WIDTH && _player.state == PLAYER_RUNNING) {
+                [_player jump];
+            } else if (point.x > SCREEN_HALF_WIDTH && _player.state != PLAYER_DISAPPEARED) {
+                if (_dissappear_cooldown < 0) {
+                    [_player disappear];
+                    _dissappear_cooldown = DISSAPPEAR_COOLDOWN;
+                }
+            }
         }
     }
 }
 
 -(void)spawnFloatGround {
-    // ***** Decision making
-
-    if  (_floaters_cooldown < 0) {
-        _floaters_cooldown = (arc4random() % CYCLES_WAIT_RANGE) + CYCLES_MIN_WAIT; // +1 to avoid double instant spawn
-    } else return;
-
-    // ***** Ok to spawn, keep going
-
     int random_width = (2 + arc4random_uniform(3)) * 100;
     SKSpriteNode* random_block = [SKSpriteNode spriteNodeWithTexture:GRASS_PLATFORM size:CGSizeMake(random_width, 50)];
     random_block.position = CGPointMake(SCREEN_WIDTH + GRASS_PLATFORM.size.width, PLAYER_INITIAL_Y * 2.5);
@@ -219,52 +228,52 @@
     random_block.physicsBody.categoryBitMask = floorCategory;
     random_block.physicsBody.contactTestBitMask = playerCategory;
     
-    int actualDuration = MAX(MIN_DURATION, INITIAL_DURATION - 0.2 * _difficulty);
-    SKAction* moveRandomBlock = [SKAction moveToX:-GRASS_PLATFORM.size.width duration: actualDuration];
-    SKAction* removeBlock = [SKAction removeFromParent];
-    [random_block runAction:[SKAction sequence:@[moveRandomBlock, removeBlock]]];
-    [self addChild:random_block];
+    [self spawnGeneric:random_block cooldown:&_floaters_cooldown cycleMinWait:CYCLES_MIN_WAIT cycleRangeWait:CYCLES_WAIT_RANGE];
 }
 
--(void)spawnMonster {
+-(void)spawnGeneric:(SKSpriteNode*)node cooldown:(int*)cooldown cycleMinWait:(int)minWait cycleRangeWait:(int)rangeWait {
     // ***** Decision making
-
-    if  (_zombies_cooldown < 0) {
-        _zombies_cooldown = (arc4random() % CYCLES_WAIT_RANGE_ZOMBIE) + CYCLES_MIN_WAIT_ZOMBIE;
-    } else return;
-
-    // ***** Ok to spawn, keep going
-
-    // Create sprite
     
+    if  (*cooldown < 0) {
+        *cooldown = (arc4random() % rangeWait) + minWait;
+    } else return;
+    
+    // ***** Ok to spawn, keep going
+    
+    int actualDuration = MAX(MIN_DURATION, INITIAL_DURATION - 0.2 * _difficulty);
+    SKAction* moveRandomBlock = [SKAction moveToX:-node.size.width duration: actualDuration];
+    SKAction* removeBlock = [SKAction removeFromParent];
+    [node runAction:[SKAction sequence:@[moveRandomBlock, removeBlock]]];
+    [self addChild:node];
+}
+
+-(Monster*)newMonster {
     Monster* monster;
     if (arc4random() % 3 >= 2) {
-        monster = [Fly initWithPos:CGPointMake(SCREEN_WIDTH * 1.1, PLAYER_INITIAL_Y * 3.5)];
-        [((Fly*) monster) fly];
+        monster = [Fly initWithPos:CGPointMake(SCREEN_WIDTH * 1.1, PLAYER_INITIAL_Y * 4)];
     } else {
         monster = [Zombie initWithPos:CGPointMake(SCREEN_WIDTH * 1.1, PLAYER_INITIAL_Y)];
-        [((Zombie*) monster) walk];
     }
+    [monster animate];
+    return monster;
+}
 
-
-    // Create the monster slightly off-screen along the right edge,
-    [self addChild:monster];
-
-    // Determine speed of the monster
-    int maxDuration = MAX(MIN_DURATION + 1, INITIAL_DURATION - 0.2 * _difficulty);
-    int rangeDuration = maxDuration - MIN_DURATION;
-    int actualDuration = (arc4random() % rangeDuration) + MIN_DURATION;
-
-    // Create the actions
-    SKAction * actionMove = [SKAction moveTo:CGPointMake(-monster.size.width/2, monster.position.y) duration:actualDuration];
-    SKAction * actionMoveDone = [SKAction removeFromParent];
-    [monster runAction:[SKAction sequence:@[actionMove, actionMoveDone]]];
+-(Heart*)newHeart {
+    float random_height = ((arc4random() % 3)/2 * PLAYER_INITIAL_Y) + PLAYER_INITIAL_Y;
+    Heart* heart = [Heart initWithPos:CGPointMake(SCREEN_WIDTH * 1.1, random_height * 0.8)];
+    [heart animate];
+    return heart;
 }
 
 -(void)update:(NSTimeInterval)currentTime {
     [self setGameScore];
+    // Spawn stuff begin
+    
     [self spawnFloatGround];
-    [self spawnMonster];
+    [self spawnGeneric:[self newMonster] cooldown:&_monsters_cooldown cycleMinWait:CYCLES_MIN_WAIT_ZOMBIE cycleRangeWait:CYCLES_WAIT_RANGE_ZOMBIE];
+    [self spawnGeneric:[self newHeart] cooldown:&_hearts_cooldown cycleMinWait:CYCLES_MIN_WAIT_HEART cycleRangeWait:CYCLES_WAIT_RANGE_HEART];
+    
+    // Spawn stuff end
     [self applyCountdowns];
 }
 
@@ -277,8 +286,10 @@
 }
 
 -(void)applyCountdowns {
-    _zombies_cooldown--;
+    _monsters_cooldown--;
     _floaters_cooldown--;
+    _hearts_cooldown--;
+    _dissappear_cooldown--;
 }
 
 - (void)didSimulatePhysics {
@@ -312,6 +323,15 @@
         if (_player.state != PLAYER_DISAPPEARED) {
             [_player die];
             [self performSelector:@selector(goToMenu) withObject:nil afterDelay:1.5];
+        }
+    }
+    
+    // Player hits heart
+    if ((firstBody.categoryBitMask & playerCategory) != 0 && (secondBody.categoryBitMask & heartCategory) != 0) {
+        if (_player.state != PLAYER_DISAPPEARED) {
+            [secondBody.node removeFromParent];
+            _hearts += 1;
+            [self updateHeartLabel];
         }
     }
 

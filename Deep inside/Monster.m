@@ -30,4 +30,7 @@
         m.physicsBody.contactTestBitMask = playerCategory | floorCategory;
         return m;
     }
+
+-(void)animate {
+}
 @end

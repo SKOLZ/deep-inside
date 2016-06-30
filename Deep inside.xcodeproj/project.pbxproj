@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B054233A1D24B878000509EF /* Fly.m in Sources */ = {isa = PBXBuildFile; fileRef = B05423391D24B878000509EF /* Fly.m */; };
+		B054233C1D24C6D1000509EF /* Heart.m in Sources */ = {isa = PBXBuildFile; fileRef = B054233B1D24C6D1000509EF /* Heart.m */; };
 		DF26E58F1CEA8190009EE213 /* smoke7 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E5881CEA8190009EE213 /* smoke7 */; };
 		DF26E5901CEA8190009EE213 /* smoke6 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E5891CEA8190009EE213 /* smoke6 */; };
 		DF26E5911CEA8190009EE213 /* smoke5 in Resources */ = {isa = PBXBuildFile; fileRef = DF26E58A1CEA8190009EE213 /* smoke5 */; };
@@ -102,6 +103,8 @@
 /* Begin PBXFileReference section */
 		B05423381D24B878000509EF /* Fly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fly.h; sourceTree = "<group>"; };
 		B05423391D24B878000509EF /* Fly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fly.m; sourceTree = "<group>"; };
+		B054233B1D24C6D1000509EF /* Heart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heart.m; sourceTree = "<group>"; };
+		B054233D1D24C871000509EF /* Heart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Heart.h; sourceTree = "<group>"; };
 		DF26E5881CEA8190009EE213 /* smoke7 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke7; sourceTree = "<group>"; };
 		DF26E5891CEA8190009EE213 /* smoke6 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke6; sourceTree = "<group>"; };
 		DF26E58A1CEA8190009EE213 /* smoke5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = smoke5; sourceTree = "<group>"; };
@@ -262,6 +265,8 @@
 				B05423381D24B878000509EF /* Fly.h */,
 				B05423391D24B878000509EF /* Fly.m */,
 				DFDFFE291D236DCC002E5598 /* Music.h */,
+				B054233B1D24C6D1000509EF /* Heart.m */,
+				B054233D1D24C871000509EF /* Heart.h */,
 			);
 			path = "Deep inside";
 			sourceTree = "<group>";
@@ -511,6 +516,7 @@
 				B054233A1D24B878000509EF /* Fly.m in Sources */,
 				DF6705F21CE3BEA6003AF6F2 /* GameScene.m in Sources */,
 				DFDFFDFE1D21F182002E5598 /* MenuScene.m in Sources */,
+				B054233C1D24C6D1000509EF /* Heart.m in Sources */,
 				DFDFFE191D22A031002E5598 /* Monster.m in Sources */,
 				DF6705EC1CE3BEA6003AF6F2 /* main.m in Sources */,
 				DFDE1AA61CEE63E800218F32 /* Player.m in Sources */,

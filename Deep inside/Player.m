@@ -22,6 +22,7 @@
     p.physicsBody.allowsRotation = NO;
     p.physicsBody.categoryBitMask = playerCategory;
     p.physicsBody.contactTestBitMask = floorCategory;
+    p.physicsBody.collisionBitMask = 0xFFFFFFFF;
     p.physicsBody.mass = PLAYER_MASS;
     return p;
 }
@@ -54,7 +55,7 @@
     self.physicsBody.collisionBitMask = floorCategory; // only collide with floor.
     [self runAction:smoke completion:^{
         self.physicsBody.dynamic = YES;
-        self.physicsBody.collisionBitMask = 0xFFFFFFFF; // return to collide with everyone
+        self.physicsBody.collisionBitMask = 0xFFFFFFF; // return to collide with everyone
         [self setTexture: NULL];
         [self removeAllActions];
         [self performSelector:@selector(appear) withObject:nil afterDelay: 1.0];

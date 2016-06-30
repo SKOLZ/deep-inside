@@ -19,7 +19,7 @@
     return [super monsterWithPosition: pos andTexture: ZOMBIE1];
 }
 
--(void)walk {
+-(void)animate {
     SKAction* walk = [SKAction repeatActionForever:[SKAction animateWithTextures:@[ZOMBIE1, ZOMBIE2, ZOMBIE3, ZOMBIE4, ZOMBIE5] timePerFrame: 0.2]];
     [self runAction: walk];
 }

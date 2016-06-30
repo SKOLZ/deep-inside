@@ -11,6 +11,5 @@
 @interface Fly : Monster
 
 +(Fly*)initWithPos: (CGPoint) pos;
--(void)fly;
 
 @end

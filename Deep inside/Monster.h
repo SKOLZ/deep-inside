@@ -11,5 +11,6 @@
 @interface Monster : SKSpriteNode
 
 +(instancetype)monsterWithPosition: (CGPoint) pos andTexture: (SKTexture *)texture;
+-(void)animate;
 
 @end
