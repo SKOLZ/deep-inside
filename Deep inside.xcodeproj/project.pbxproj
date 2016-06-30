@@ -108,6 +108,16 @@
 		DF33C1251D23B1410085F353 /* player_dying3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_dying3; sourceTree = "<group>"; };
 		DF33C1261D23B1410085F353 /* player_dying2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_dying2; sourceTree = "<group>"; };
 		DF33C1271D23B1410085F353 /* player_dying1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = player_dying1; sourceTree = "<group>"; };
+		DF33C12E1D24B0460085F353 /* fly1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly1; sourceTree = "<group>"; };
+		DF33C12F1D24B0460085F353 /* fly2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly2; sourceTree = "<group>"; };
+		DF33C1301D24B0460085F353 /* fly3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly3; sourceTree = "<group>"; };
+		DF33C1311D24B0460085F353 /* fly4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly4; sourceTree = "<group>"; };
+		DF33C1321D24B0460085F353 /* fly5 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly5; sourceTree = "<group>"; };
+		DF33C1331D24B0460085F353 /* fly6 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly6; sourceTree = "<group>"; };
+		DF33C1341D24B0460085F353 /* fly7 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly7; sourceTree = "<group>"; };
+		DF33C1351D24B0460085F353 /* fly8 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly8; sourceTree = "<group>"; };
+		DF33C1361D24B0460085F353 /* fly9 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly9; sourceTree = "<group>"; };
+		DF33C1371D24B0460085F353 /* fly10 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fly10; sourceTree = "<group>"; };
 		DF6705E71CE3BEA6003AF6F2 /* Deep inside.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Deep inside.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF6705EB1CE3BEA6003AF6F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DF6705ED1CE3BEA6003AF6F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -271,6 +281,16 @@
 				DFDFFE741D238CF6002E5598 /* menu_bg6 */,
 				DFDFFE751D238CF6002E5598 /* menu_bg5 */,
 				DFDFFE761D238CF6002E5598 /* menu_bg4 */,
+				DF33C12E1D24B0460085F353 /* fly1 */,
+				DF33C12F1D24B0460085F353 /* fly2 */,
+				DF33C1301D24B0460085F353 /* fly3 */,
+				DF33C1311D24B0460085F353 /* fly4 */,
+				DF33C1321D24B0460085F353 /* fly5 */,
+				DF33C1331D24B0460085F353 /* fly6 */,
+				DF33C1341D24B0460085F353 /* fly7 */,
+				DF33C1351D24B0460085F353 /* fly8 */,
+				DF33C1361D24B0460085F353 /* fly9 */,
+				DF33C1371D24B0460085F353 /* fly10 */,
 				DFDFFE771D238CF6002E5598 /* menu_bg3 */,
 				DFDFFE781D238CF6002E5598 /* menu_bg2 */,
 				DFDFFE791D238CF6002E5598 /* menu_bg1 */,
